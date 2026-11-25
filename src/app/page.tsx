@@ -39,7 +39,6 @@ import {
   Flame, 
   ArrowRight,
   ShieldCheck,
-  Stethoscope,
   GraduationCap
 } from 'lucide-react';
 
@@ -709,8 +708,8 @@ export default function Home() {
   if (isLoading || hasCompletedOnboarding === null) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center min-h-screen bg-slate-950 text-slate-100">
-        <div className="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 animate-pulse mb-3">
-          <Stethoscope className="w-6 h-6" />
+        <div className="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center animate-pulse mb-3 overflow-hidden">
+          <img src="/icons/anki-logo.png" alt="Juneja's Anki cards" className="w-8 h-8 object-contain" />
         </div>
         <p className="text-xs text-slate-400 font-medium">Loading NEET PG Spaced Repetition...</p>
       </div>

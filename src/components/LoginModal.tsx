@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Sparkles, Mail, Lock, Stethoscope, ArrowRight } from 'lucide-react';
+import { Sparkles, Mail, Lock, ArrowRight } from 'lucide-react';
 
 interface LoginModalProps {
   onSuccess?: () => void;
@@ -31,11 +31,11 @@ export function LoginModal({ onSuccess }: LoginModalProps) {
     <div className="flex flex-col items-center justify-center p-4 min-h-[520px]">
       <Card className="w-full max-w-sm border-slate-800 bg-slate-900/90 text-slate-100 shadow-2xl backdrop-blur-md">
         <CardHeader className="text-center pb-4">
-          <div className="mx-auto w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-3 text-sky-400">
-            <Stethoscope className="w-7 h-7" />
+          <div className="mx-auto w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-3 overflow-hidden">
+            <img src="/icons/anki-logo.png" alt="Juneja's Anki cards" className="w-9 h-9 object-contain" />
           </div>
           <CardTitle className="text-xl font-bold tracking-tight text-white">
-            Welcome to Juneja&apos;s
+            Welcome to Juneja&apos;s Anki cards
           </CardTitle>
           <CardDescription className="text-xs text-slate-400">
             Sign in to sync your spaced repetition queue and track your NEET PG 720-mark readiness.

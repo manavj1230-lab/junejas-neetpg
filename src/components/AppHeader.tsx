@@ -4,7 +4,7 @@ import React from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Stethoscope, LogOut, Clock, Download } from 'lucide-react';
+import { LogOut, Clock, Download } from 'lucide-react';
 
 interface AppHeaderProps {
   onOpenUpgradeModal?: () => void;
@@ -22,12 +22,12 @@ export function AppHeader({
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between px-4 py-3 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 text-slate-100">
       <div className="flex items-center gap-2.5">
-        <div className="w-8 h-8 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
-          <Stethoscope className="w-4 h-4" />
+        <div className="w-8 h-8 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center overflow-hidden">
+          <img src="/icons/anki-logo.png" alt="Juneja's Anki cards" className="w-5 h-5 object-contain" />
         </div>
         <div>
           <div className="text-sm font-bold tracking-tight text-white flex items-center gap-1.5">
-            <span>Juneja&apos;s</span>
+            <span>Juneja&apos;s Anki cards</span>
             <Badge className="bg-sky-500/20 border-sky-500/40 text-sky-300 text-[10px] px-1.5 py-0 font-bold">
               PRO
             </Badge>

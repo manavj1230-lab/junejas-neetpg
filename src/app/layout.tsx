@@ -9,13 +9,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Juneja's | NEET PG Flashcards",
+  title: "Juneja's Anki cards | NEET PG Flashcards",
   description: 'Official Anki FSRS Spaced Repetition Flashcards for NEET PG, INI-CET, and MBBS Professional Exams.',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: "Juneja's",
+    title: "Juneja's Anki cards",
   },
   icons: {
     icon: [
