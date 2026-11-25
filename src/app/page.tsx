@@ -7,6 +7,7 @@ import { LoginModal } from '@/components/LoginModal';
 import { TrialWelcomeModal } from '@/components/TrialWelcomeModal';
 import { SubscriptionUpgradeModal } from '@/components/SubscriptionUpgradeModal';
 import { InstallAppModal, BeforeInstallPromptEvent } from '@/components/InstallAppModal';
+import { LegalFooter } from '@/components/LegalFooter';
 import { AppHeader } from '@/components/AppHeader';
 import { BottomNavBar, NavTab } from '@/components/BottomNavBar';
 import { BrowseDecks } from '@/components/BrowseDecks';
@@ -741,6 +742,7 @@ export default function Home() {
               ← Replay Onboarding Carousel
             </button>
           </div>
+          <LegalFooter />
         </div>
       </main>
     );
@@ -910,6 +912,8 @@ export default function Home() {
                 Reset Demo User
               </button>
             </div>
+
+            <LegalFooter />
           </main>
         )}
 
