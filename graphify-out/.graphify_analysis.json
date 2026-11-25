@@ -1,0 +1,417 @@
+{
+  "communities": {
+    "0": [
+      "eslint_config",
+      "eslint_config_eslintconfig",
+      "package",
+      "package_dependencies",
+      "package_dependencies_clsx",
+      "package_dependencies_lucide_react",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_shadcn",
+      "package_dependencies_supabase_supabase_js",
+      "package_dependencies_tailwind_merge",
+      "package_dependencies_ts_fsrs",
+      "package_dependencies_tw_animate_css",
+      "package_devdependencies",
+      "package_devdependencies_eslint",
+      "package_devdependencies_eslint_config_next",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_turbopack",
+      "package_devdependencies_types_node",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_typescript",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_start",
+      "package_version",
+      "ref_clsx",
+      "ref_eslint",
+      "ref_eslint_config_next",
+      "ref_react_dom",
+      "ref_shadcn",
+      "ref_supabase_supabase_js",
+      "ref_tailwind_merge",
+      "ref_tailwindcss",
+      "ref_tailwindcss_turbopack",
+      "ref_tw_animate_css",
+      "ref_types_node",
+      "ref_types_react",
+      "ref_types_react_dom",
+      "ref_typescript"
+    ],
+    "1": [
+      "ref_lucide_react",
+      "ref_react",
+      "src_components_cardpreviewmodal",
+      "src_components_cardpreviewmodal_cardpreviewmodal",
+      "src_components_dailycardssummarycard",
+      "src_components_dailycardssummarycard_dailycardssummarycardprops",
+      "src_components_dailycardssummarycard_dailysummarydata",
+      "src_components_onboardingcarousel",
+      "src_components_onboardingcarousel_onboardingprops",
+      "src_components_onboardingcarousel_slides",
+      "src_components_studystreakheatmap",
+      "src_components_studystreakheatmap_heatmapday",
+      "src_components_studystreakheatmap_rangefilter",
+      "src_components_studystreakheatmap_studystreakheatmap",
+      "src_components_studystreakheatmap_studystreakheatmapprops",
+      "src_components_subscriptionupgrademodal",
+      "src_components_subscriptionupgrademodal_subscriptionmodalprops",
+      "src_components_subscriptionupgrademodal_subscriptionupgrademodal",
+      "src_components_trialwelcomemodal",
+      "src_components_trialwelcomemodal_trialwelcomemodal",
+      "src_components_trialwelcomemodal_trialwelcomemodalprops",
+      "src_components_ui_button",
+      "src_components_ui_button_button",
+      "src_components_ui_button_buttonvariants",
+      "src_components_ui_dialog",
+      "src_components_ui_dialog_dialog",
+      "src_components_ui_dialog_dialogclose",
+      "src_components_ui_dialog_dialogcontent",
+      "src_components_ui_dialog_dialogdescription",
+      "src_components_ui_dialog_dialogfooter",
+      "src_components_ui_dialog_dialogheader",
+      "src_components_ui_dialog_dialogoverlay",
+      "src_components_ui_dialog_dialogportal",
+      "src_components_ui_dialog_dialogtitle",
+      "src_components_ui_dialog_dialogtrigger"
+    ],
+    "2": [
+      "ref_ts_fsrs",
+      "src_components_ankidecktable",
+      "src_components_ankidecktable_ankidecktableprops",
+      "src_components_ankidecktable_deckrowdata",
+      "src_components_browsedecks",
+      "src_components_browsedecks_browsedecksprops",
+      "src_components_cardpreviewmodal_cardpreviewmodalprops",
+      "src_components_studyplayer",
+      "src_components_studyplayer_studyitem",
+      "src_components_studyplayer_studyplayer",
+      "src_components_studyplayer_studyplayerprops",
+      "src_components_ui_progress",
+      "src_components_ui_progress_progress",
+      "src_components_ui_progress_progressindicator",
+      "src_components_ui_progress_progresslabel",
+      "src_components_ui_progress_progresstrack",
+      "src_components_ui_progress_progressvalue",
+      "src_lib_fsrsengine",
+      "src_lib_fsrsengine_formatintervallabel",
+      "src_lib_fsrsengine_fsrsinstance",
+      "src_lib_fsrsengine_progresstofsrscard",
+      "src_lib_fsrsengine_schedulereview",
+      "src_lib_seeddata",
+      "src_lib_seeddata_seed_decks_by_year",
+      "src_lib_seeddata_seedsubject",
+      "src_types_database",
+      "src_types_database_deck",
+      "src_types_database_flashcard",
+      "src_types_database_mbbsyear",
+      "src_types_database_usercardprogress",
+      "src_types_database_userselecteddeck"
+    ],
+    "3": [
+      "src_app_page",
+      "src_app_page_home",
+      "src_components_ankidecktable_ankidecktable",
+      "src_components_appheader",
+      "src_components_appheader_appheader",
+      "src_components_appheader_appheaderprops",
+      "src_components_bottomnavbar",
+      "src_components_bottomnavbar_bottomnavbar",
+      "src_components_bottomnavbar_bottomnavbarprops",
+      "src_components_bottomnavbar_navtab",
+      "src_components_browsedecks_browsedecks",
+      "src_components_dailycardssummarycard_dailycardssummarycard",
+      "src_components_loginmodal",
+      "src_components_loginmodal_loginmodal",
+      "src_components_loginmodal_loginmodalprops",
+      "src_components_onboardingcarousel_onboardingcarousel",
+      "src_components_ui_badge",
+      "src_components_ui_badge_badge",
+      "src_components_ui_badge_badgevariants",
+      "src_components_ui_card",
+      "src_components_ui_card_card",
+      "src_components_ui_card_cardaction",
+      "src_components_ui_card_cardcontent",
+      "src_components_ui_card_carddescription",
+      "src_components_ui_card_cardfooter",
+      "src_components_ui_card_cardheader",
+      "src_components_ui_card_cardtitle",
+      "src_context_authcontext_useauth",
+      "src_lib_fsrsengine_getinitialcardprogress"
+    ],
+    "4": [
+      "next_config",
+      "next_config_nextconfig",
+      "package_dependencies_next",
+      "package_dependencies_supabase_ssr",
+      "ref_next",
+      "ref_supabase_ssr",
+      "src_app_auth_callback_route",
+      "src_app_auth_callback_route_get",
+      "src_app_globals",
+      "src_app_layout",
+      "src_app_layout_inter",
+      "src_app_layout_metadata",
+      "src_app_layout_rootlayout",
+      "src_app_layout_viewport",
+      "src_context_authcontext",
+      "src_context_authcontext_authcontext",
+      "src_context_authcontext_authcontexttype",
+      "src_context_authcontext_authprovider",
+      "src_context_authcontext_authprovider_initauth",
+      "src_lib_supabase_client",
+      "src_lib_supabase_client_createclient",
+      "src_lib_supabase_server",
+      "src_lib_supabase_server_createserversupabaseclient",
+      "src_middleware",
+      "src_middleware_config",
+      "src_middleware_middleware",
+      "src_types_database_profile"
+    ],
+    "5": [
+      "components",
+      "components_aliases",
+      "components_aliases_components",
+      "components_aliases_hooks",
+      "components_aliases_lib",
+      "components_aliases_ui",
+      "components_aliases_utils",
+      "components_iconlibrary",
+      "components_menuaccent",
+      "components_menucolor",
+      "components_registries",
+      "components_rsc",
+      "components_rtl",
+      "components_schema",
+      "components_style",
+      "components_tailwind",
+      "components_tailwind_basecolor",
+      "components_tailwind_config",
+      "components_tailwind_css",
+      "components_tailwind_cssvariables",
+      "components_tailwind_prefix",
+      "components_tsx"
+    ],
+    "6": [
+      "tsconfig",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_allowjs",
+      "tsconfig_compileroptions_esmoduleinterop",
+      "tsconfig_compileroptions_incremental",
+      "tsconfig_compileroptions_isolatedmodules",
+      "tsconfig_compileroptions_jsx",
+      "tsconfig_compileroptions_lib",
+      "tsconfig_compileroptions_module",
+      "tsconfig_compileroptions_moduleresolution",
+      "tsconfig_compileroptions_noemit",
+      "tsconfig_compileroptions_paths",
+      "tsconfig_compileroptions_plugins",
+      "tsconfig_compileroptions_resolvejsonmodule",
+      "tsconfig_compileroptions_skiplibcheck",
+      "tsconfig_compileroptions_strict",
+      "tsconfig_compileroptions_target",
+      "tsconfig_exclude",
+      "tsconfig_include"
+    ],
+    "7": [
+      "package_dependencies_embla_carousel_react",
+      "ref_embla_carousel_react",
+      "src_components_ui_carousel",
+      "src_components_ui_carousel_carousel",
+      "src_components_ui_carousel_carouselapi",
+      "src_components_ui_carousel_carouselcontent",
+      "src_components_ui_carousel_carouselcontext",
+      "src_components_ui_carousel_carouselcontextprops",
+      "src_components_ui_carousel_carouselitem",
+      "src_components_ui_carousel_carouselnext",
+      "src_components_ui_carousel_carouseloptions",
+      "src_components_ui_carousel_carouselplugin",
+      "src_components_ui_carousel_carouselprevious",
+      "src_components_ui_carousel_carouselprops",
+      "src_components_ui_carousel_usecarousel",
+      "src_components_ui_carousel_usecarouselparameters"
+    ],
+    "8": [
+      "package_dependencies_base_ui_react",
+      "package_dependencies_class_variance_authority",
+      "package_dependencies_cn",
+      "ref_base_ui_react",
+      "ref_class_variance_authority",
+      "ref_cn",
+      "src_components_ui_switch",
+      "src_components_ui_switch_switch",
+      "src_components_ui_tabs",
+      "src_components_ui_tabs_tabs",
+      "src_components_ui_tabs_tabscontent",
+      "src_components_ui_tabs_tabslist",
+      "src_components_ui_tabs_tabslistvariants",
+      "src_components_ui_tabs_tabstrigger",
+      "src_lib_utils"
+    ]
+  },
+  "cohesion": {
+    "0": 0.0613107822410148,
+    "1": 0.18319327731092436,
+    "2": 0.13763440860215054,
+    "3": 0.18472906403940886,
+    "4": 0.10541310541310542,
+    "5": 0.09090909090909091,
+    "6": 0.10526315789473684,
+    "7": 0.15833333333333333,
+    "8": 0.1523809523809524
+  },
+  "gods": [
+    {
+      "id": "src_components_ui_button_button",
+      "label": "Button()",
+      "degree": 28
+    },
+    {
+      "id": "src_app_page_home",
+      "label": "Home()",
+      "degree": 21
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "degree": 19
+    },
+    {
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
+      "degree": 16
+    },
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "src_components_ui_badge_badge",
+      "label": "Badge()",
+      "degree": 14
+    },
+    {
+      "id": "src_components_ui_dialog_dialogcontent",
+      "label": "DialogContent()",
+      "degree": 12
+    },
+    {
+      "id": "src_components_subscriptionupgrademodal_subscriptionupgrademodal",
+      "label": "SubscriptionUpgradeModal()",
+      "degree": 11
+    },
+    {
+      "id": "src_context_authcontext_useauth",
+      "label": "useAuth()",
+      "degree": 11
+    },
+    {
+      "id": "ref_cn",
+      "label": "cn",
+      "degree": 11
+    }
+  ],
+  "surprises": [
+    {
+      "source": "AnkiDeckTableProps",
+      "target": "UserCardProgress",
+      "source_files": [
+        "src/components/AnkiDeckTable.tsx",
+        "src/types/database.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `AnkiDeckTableProps` unexpectedly reaches hub `UserCardProgress`"
+    },
+    {
+      "source": "CardPreviewModalProps",
+      "target": "Flashcard",
+      "source_files": [
+        "src/components/CardPreviewModal.tsx",
+        "src/types/database.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `CardPreviewModalProps` unexpectedly reaches hub `Flashcard`"
+    },
+    {
+      "source": "StudyPlayerProps",
+      "target": "UserCardProgress",
+      "source_files": [
+        "src/components/StudyPlayer.tsx",
+        "src/types/database.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `StudyPlayerProps` unexpectedly reaches hub `UserCardProgress`"
+    },
+    {
+      "source": "BrowseDecks()",
+      "target": "CardPreviewModal()",
+      "source_files": [
+        "src/components/BrowseDecks.tsx",
+        "src/components/CardPreviewModal.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "CardPreviewModal()",
+      "target": "Badge()",
+      "source_files": [
+        "src/components/CardPreviewModal.tsx",
+        "src/components/ui/badge.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `react` connect `Community 1` to `Community 0`, `Community 2`, `Community 3`, `Community 4`, `Community 7`?",
+      "why": "High betweenness centrality (0.125) - this node is a cross-community bridge."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.0613107822410148 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `lucide-react` connect `Community 1` to `Community 0`, `Community 2`, `Community 3`, `Community 7`?",
+      "why": "High betweenness centrality (0.084) - this node is a cross-community bridge."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 2` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.13763440860215054 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `cn` connect `Community 8` to `Community 0`, `Community 1`, `Community 2`, `Community 3`, `Community 7`?",
+      "why": "High betweenness centrality (0.063) - this node is a cross-community bridge."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 4` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.10541310541310542 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 5` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

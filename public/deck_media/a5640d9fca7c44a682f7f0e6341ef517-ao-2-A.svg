@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="716" height="592">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+  <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_1" y="85.47748" x="422.73873" stroke-width="0" fill="#000000">[biceps]</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_3" y="185.47748" x="623.63963" stroke-width="0" fill="#000000">[triceps]</text>
+  <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_4" y="284.57658" x="506.52251" stroke-width="0" fill="#000000">[of little finger ]</text>
+  <text transform="matrix(0.702838122844696,0,0,1,113.00973325129598,0) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_17" y="234.12613" x="612.51425" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">[flexor digitorum profundus -middle finger</text>
+  <line id="svg_18" y2="238.63064" x2="381.29728" y1="236.82883" x1="229.04503" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" stroke="#2D2D2D" fill="#000000"/>
+ </g>
+ <g display="inline">
+  <title>Masks</title>
+  <rect id="a5640d9fca7c44a682f7f0e6341ef517-ao-1" height="41.44144" width="286.48649" y="53.94595" x="212.82881" stroke="#2D2D2D" fill="#FFEBA2"/>
+  
+  <rect stroke="#2D2D2D" id="a5640d9fca7c44a682f7f0e6341ef517-ao-3" height="41.44144" width="475.67569" y="202.5946" x="218.23422" fill="#FFEBA2"/>
+  <rect transform="translate(-11.711711883544922,87.38739013671875) " id="a5640d9fca7c44a682f7f0e6341ef517-ao-4" height="41.44144" width="286.48649" y="220.61262" x="236.25224" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect transform="translate(-16.216217041015625,31.531532287597656) " id="a5640d9fca7c44a682f7f0e6341ef517-ao-5" height="41.44144" width="286.48649" y="326.01803" x="242.55855" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="a5640d9fca7c44a682f7f0e6341ef517-ao-6" height="42.34234" width="461.26126" y="405.2973" x="228.14413" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="a5640d9fca7c44a682f7f0e6341ef517-ao-7" height="42.34234" width="461.26126" y="455.74776" x="226.34233" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect transform="translate(-23.423423767089844,-167.56756591796875) " id="a5640d9fca7c44a682f7f0e6341ef517-ao-8" height="42.34234" width="461.26126" y="423.31532" x="246.16215" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="a5640d9fca7c44a682f7f0e6341ef517-ao-9" height="42.34234" width="461.26126" y="155.74776" x="218.23422" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="a5640d9fca7c44a682f7f0e6341ef517-ao-10" height="75.67568" width="472.97298" y="512.50451" x="229.04503" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+ </g>
+</svg>

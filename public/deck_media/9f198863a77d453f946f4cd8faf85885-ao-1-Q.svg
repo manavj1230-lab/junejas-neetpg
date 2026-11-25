@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1124">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+ </g>
+ <g>
+  <title>Masks</title>
+  <g id="9f198863a77d453f946f4cd8faf85885-ao-1" class="qshape">
+   <rect stroke="#2D2D2D" height="34.14634" width="1234.14637" y="49.17074" x="20.00003" fill="#FF7E7E" class="qshape"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="71.12195" x="628.53661" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">aerobe/anaerobe</text>
+  </g>
+  <g id="9f198863a77d453f946f4cd8faf85885-ao-2">
+   <rect height="24.39024" width="1221.95125" y="97.95122" x="12.68296" stroke="#2D2D2D" fill="#FFEBA2"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="115.02439" x="623.65856" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">acid fast</text>
+  </g>
+  <g id="9f198863a77d453f946f4cd8faf85885-ao-3">
+   <rect stroke="#2D2D2D" height="60.97561" width="1248.78056" y="139.41462" x="13.90242" fill="#FFEBA2"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="176" x="628.53661" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">usually present in</text>
+  </g>
+  <g id="9f198863a77d453f946f4cd8faf85885-ao-4">
+   <rect stroke="#2D2D2D" height="60.97561" width="1248.78056" y="215.02439" x="10.24393" fill="#FFEBA2"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="246.73169" x="640.73173" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">most common site</text>
+  </g>
+  <g id="9f198863a77d453f946f4cd8faf85885-ao-5">
+   <rect stroke="#2D2D2D" height="31.70732" width="1248.78056" y="290.63413" x="16.34145" fill="#FFEBA2"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="312.58536" x="640.73173" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">most common extrapulmonary site</text>
+  </g>
+  <g id="9f198863a77d453f946f4cd8faf85885-ao-6">
+   <rect stroke="#2D2D2D" height="224.39033" width="1248.78056" y="341.85373" x="18.78047" fill="#FFEBA2"/>
+   <text transform="matrix(1.7448433637619016,0,0,1.8926044702529907,-516.7909042903048,-392.7098969594227) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="456.4878" x="657.8049" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">culture</text>
+  </g>
+  <g id="9f198863a77d453f946f4cd8faf85885-ao-7">
+   <rect stroke="#2D2D2D" height="31.70732" width="1248.78056" y="585.75612" x="16.34145" fill="#FFEBA2"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="607.70732" x="662.68295" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">treatment</text>
+  </g>
+  <g id="9f198863a77d453f946f4cd8faf85885-ao-8">
+   <rect stroke="#2D2D2D" height="446.34156" width="1248.78056" y="667.4634" x="6.58535" fill="#FFEBA2"/>
+   <text transform="matrix(1.944624662399292,0,0,2.254225492477417,-513.37450339114,-1006.8530155038607) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="846.42007" x="615.43452" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">microscopy</text>
+  </g>
+ </g>
+</svg>

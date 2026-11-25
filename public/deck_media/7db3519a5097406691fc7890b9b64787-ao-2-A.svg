@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="927" height="716">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_1" y="379.78945" x="181.42102" stroke-width="0" fill="#000000">fracture line</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_3" y="456.63156" x="170.8947" stroke-width="0" fill="#000000">fracture ends</text>
+  <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_4" y="537.68419" x="190.89471" stroke-width="0" fill="#000000">problem</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_5" y="700.84208" x="177.2105" stroke-width="0" fill="#000000">treatment</text>
+ </g>
+ <g>
+  <title>Masks</title>
+  <rect id="7db3519a5097406691fc7890b9b64787-ao-1" height="69.47368" width="276.8421" y="519.78945" x="262.47365" stroke="#2D2D2D" fill="#FFEBA2"/>
+  
+  <g id="7db3519a5097406691fc7890b9b64787-ao-3">
+   <rect height="68.42105" width="290.52631" y="353.47367" x="262.47365" stroke="#2D2D2D" fill="#FFEBA2"/>
+   <rect height="68.42105" width="290.52631" y="353.47367" x="608.78943" stroke="#2D2D2D" fill="#FFEBA2"/>
+  </g>
+  <g id="7db3519a5097406691fc7890b9b64787-ao-4">
+   <rect height="84.21052" width="313.6842" y="426.10524" x="592.99996" stroke="#2D2D2D" fill="#FFEBA2"/>
+   <rect height="78.94737" width="286.31578" y="431.3684" x="260.36839" stroke="#2D2D2D" fill="#FFEBA2"/>
+  </g>
+ </g>
+</svg>

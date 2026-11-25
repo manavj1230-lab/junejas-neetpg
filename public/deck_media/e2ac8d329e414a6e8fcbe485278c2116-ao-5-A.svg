@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="654" height="353.99999999999994">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+  <text transform="matrix(0.559780629351124,0,0,0.5220986382409549,5.256545785934789,59.15814459753783) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_1" y="151.95543" x="87.75335" stroke-width="0" fill="#000000">UMN/LMN</text>
+  <text style="cursor: move;" transform="matrix(0.5212894563430658,0,0,0.5189392066512609,-4.233803196536497,77.24237143748864) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_2" y="197.09055" x="103.10568" stroke-width="0" fill="#000000">SYMMETRY</text>
+  <text style="cursor: move;" transform="matrix(0.4722741950032528,0,0,0.5962920508872734,37.6811311421805,68.57123202281224) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_7" y="231.58629" x="119.47927" stroke-width="0" fill="#000000">KNEE,ANKLE</text>
+  <text style="cursor: move;" transform="matrix(0.5064443945884705,0,0,0.6151655316352844,-9.07679605577141,80.73105581663549) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_8" y="299.0646" x="166.38352" stroke-width="0" fill="#000000">Urinary retention</text>
+ </g>
+ <g>
+  <title>Masks</title>
+  
+  <rect id="e2ac8d329e414a6e8fcbe485278c2116-ao-1" height="26.48649" width="243.78378" y="190.3243" x="138.97296" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="e2ac8d329e414a6e8fcbe485278c2116-ao-2" height="26.48649" width="216.75675" y="186.54052" x="408.16214" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <g id="e2ac8d329e414a6e8fcbe485278c2116-ao-3">
+   <rect height="23.78378" width="110.81081" y="149.24322" x="138.97296" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+   <rect height="20" width="118.91892" y="153.56755" x="410.3243" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  </g>
+  <g id="e2ac8d329e414a6e8fcbe485278c2116-ao-4">
+   <rect height="37.2973" width="220.54054" y="221.13511" x="405.45944" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+   <rect height="35.67567" width="234.05405" y="222.75674" x="138.43242" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  </g>
+  
+ </g>
+</svg>

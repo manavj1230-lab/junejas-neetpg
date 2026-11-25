@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="579" height="368.99999999999994">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+  <line id="svg_3" y2="16.94593" x2="160.45944" y1="21.27025" x1="360.45944" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <text transform="matrix(0.6946355400927189,0,0,0.7566025176548123,3.0560443281775345,0.6156015912909059) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_4" y="30.66727" x="122.71461" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">clofazimine(300 mg</text>
+  <line id="svg_5" y2="46.13512" x2="195.05404" y1="39.64863" x1="332.35133" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <text transform="matrix(0.7471701502799988,0,0,0.8380592465400695,16.8663817550987,4.91483861580491) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_6" y="55.32431" x="141.54052" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">dapsone(100 mg)</text>
+  <line id="svg_8" y2="185.59457" x2="135.05404" y1="184.51349" x1="292.35133" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <text transform="matrix(0.8649352192878723,0,0,0.8572157025337219,1.299998514354229,24.877932828851044) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_9" y="195.86484" x="69.64864" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">clofazimine</text>
+  <line id="svg_10" y2="102.35133" x2="190.18917" y1="40.72971" x1="409.10809" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <text style="cursor: move;" transform="matrix(0.6771256923675537,0,0,0.6961833238601685,-18.671215821057558,24.689852071925998) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_11" y="119.19699" x="175.53799" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">rifampicin(300+300 mg)</text>
+ </g>
+ <g>
+  <title>Masks</title>
+  <rect id="f8cf2360343041a38dfaa461cc5f38f6-ao-1" height="23.24324" width="157.29729" y="6.67566" x="11.27026" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="f8cf2360343041a38dfaa461cc5f38f6-ao-2" height="23.24324" width="157.29729" y="33.70269" x="38.29728" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  
+  <rect id="f8cf2360343041a38dfaa461cc5f38f6-ao-4" height="23.24324" width="157.29729" y="173.16215" x="2.62161" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+ </g>
+</svg>

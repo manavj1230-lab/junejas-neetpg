@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="571">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+  <text transform="matrix(0.8464707136154175,0,0,0.9189497232437134,69.45041203312576,21.731274011886853) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_1" y="292.47823" x="592.56961" stroke-width="0" fill="#000000">IF prev. normal hip</text>
+  <text style="cursor: move;" transform="matrix(0.7862324118614197,0,0,0.8710262179374695,123.65786950103939,33.34778352454305) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_2" y="292.28419" x="797.96588" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">if prev. abnormal hip</text>
+  <text style="cursor: move;" transform="matrix(0.8369919061660765,0,0,0.8710262179374695,176.03573065251112,56.1781548410654) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_3" y="291.03016" x="662.05961" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">osteoarthritis</text>
+ </g>
+ <g>
+  <title>Masks</title>
+  <rect id="ddee20e39e004b66a9b3e63fa657766c-ao-1" height="123.47826" width="125.21739" y="241.17388" x="61.91305" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="ddee20e39e004b66a9b3e63fa657766c-ao-2" height="87.82609" width="217.39131" y="463.78258" x="227.13045" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="ddee20e39e004b66a9b3e63fa657766c-ao-3" height="93.04348" width="238.26087" y="461.17388" x="474.08697" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+ </g>
+</svg>

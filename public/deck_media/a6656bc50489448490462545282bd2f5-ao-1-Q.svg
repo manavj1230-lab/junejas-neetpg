@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="270">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+ </g>
+ <g>
+  <title>Masks</title>
+  <g id="a6656bc50489448490462545282bd2f5-ao-1" class="qshape">
+   <g class="qshape">
+    <rect height="21.35922" width="55.33981" y="161.55339" x="119.32042" stroke="#2D2D2D" fill="#FF7E7E" class="qshape"/>
+    <text transform="matrix(0.6990782082788201,0,0,0.6390164494514466,55.431418314667624,66.0094167022553) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="172.233" x="130.9709" stroke-width="0" fill="#000000">type</text>
+   </g>
+   <g stroke="null" class="qshape">
+    <rect stroke="#2D2D2D" height="19.41748" width="32.03884" y="164.95146" x="337.76699" fill="#FF7E7E" class="qshape"/>
+    <text transform="matrix(0.4047295284787668,0,0,0.5809240241803978,174.3095413092765,75.00415129081617) " xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="177.55065" x="443.44891" stroke-width="0" fill="#000000">type</text>
+   </g>
+  </g>
+  <g id="a6656bc50489448490462545282bd2f5-ao-2"/>
+  <g id="a6656bc50489448490462545282bd2f5-ao-3"/>
+  <g id="a6656bc50489448490462545282bd2f5-ao-4">
+   <g>
+    <rect height="45.63107" width="123.30098" y="189.70873" x="108.6408" stroke="#2D2D2D" fill="#FFEBA2"/>
+    <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="218.10678" x="170.29125" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">function</text>
+   </g>
+   <g>
+    <rect height="28.15534" width="252.42719" y="224.66019" x="337.76703" stroke="#2D2D2D" fill="#FFEBA2"/>
+    <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="244.32038" x="472.23301" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">function</text>
+   </g>
+  </g>
+ </g>
+</svg>

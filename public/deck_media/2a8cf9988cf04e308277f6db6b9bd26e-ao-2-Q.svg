@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1029" height="283">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_1" y="188.2" x="239.79999" stroke-width="0" fill="#000000">prognosis</text>
+  <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_2" y="228.2" x="219.8" stroke-width="0" fill="#000000">Histamine test</text>
+ </g>
+ <g>
+  <title>Masks</title>
+  <g id="2a8cf9988cf04e308277f6db6b9bd26e-ao-1">
+   <rect height="70.4" width="247.2" y="203.4" x="300.6" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+   <rect stroke="#2D2D2D" height="70.4" width="272.00001" y="205" x="710.20001" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" fill="#FFEBA2"/>
+  </g>
+  <g id="2a8cf9988cf04e308277f6db6b9bd26e-ao-2" class="qshape">
+   <rect height="41.6" width="176.8" y="156.2" x="299" stroke="#2D2D2D" fill="#FF7E7E" class="qshape"/>
+   <rect height="41.6" width="176.8" y="157.8" x="715" stroke="#2D2D2D" fill="#FF7E7E" class="qshape"/>
+  </g>
+ </g>
+</svg>

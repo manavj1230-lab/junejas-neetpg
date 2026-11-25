@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="746" height="499">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+  <text fill="#000000" stroke-width="0" x="112.00604" y="435.65084" id="svg_1" font-size="24" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" text-anchor="middle" xml:space="preserve" transform="matrix(0.781042218208313,0,0,0.7839511954246844,-3.711162231862546,82.55753307923507) ">Calve's disease</text>
+  <text fill="#000000" stroke-width="0" x="503.20886" y="421.26342" id="svg_2" font-size="24" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" text-anchor="middle" xml:space="preserve" transform="matrix(0.7961379885673523,0,0,0.9428930878639221,67.1165839429359,22.419816786423326) ">central bony nucleus of vertebrae</text>
+  <text fill="#000000" stroke-width="0" x="55.23137" y="459.39554" id="svg_3" font-size="24" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" text-anchor="middle" xml:space="preserve" transform="matrix(0.8779897093772888,0,0,0.8572327494621277,-0.5795488804578781,60.62700523622334) ">panner</text>
+  <text fill="#000000" stroke-width="0" x="361.98494" y="463.78436" id="svg_4" font-size="24" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" text-anchor="middle" xml:space="preserve" transform="matrix(0.8811134099960327,0,0,0.839609232270817,57.187005462124944,63.38932431136891) ">capitulum</text>
+  <text fill="#000000" stroke-width="0" x="46.1869" y="472.52973" id="svg_5" font-size="24" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" text-anchor="middle" xml:space="preserve" transform="matrix(0.8394802808761596,0,0,0.7715723514556885,99.95938636362551,121.60202982649207) ">Johanson larsen syndrome</text>
+  <text fill="#000000" stroke-width="0" x="454.44362" y="492.8721" id="svg_6" font-size="24" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" text-anchor="middle" xml:space="preserve" transform="matrix(0.8636172413825989,0,0,0.8857861757278442,35.96242866292596,51.2909300532192) ">inferior pole of patella</text>
+ </g>
+ <g>
+  <title>Masks</title>
+  <rect fill="#FFEBA2" stroke="#2D2D2D" x="321.93892" y="37.64122" width="230.53435" height="32.06107" id="0c710f5f944547f5acef8d2da0ca0fc6-ao-1"/>
+  <rect fill="#FFEBA2" stroke="#2D2D2D" x="323.46564" y="75.80916" width="230.53435" height="32.06107" id="0c710f5f944547f5acef8d2da0ca0fc6-ao-2"/>
+  <rect fill="#FFEBA2" stroke="#2D2D2D" x="323.46563" y="117.79389" width="230.53435" height="32.06107" id="0c710f5f944547f5acef8d2da0ca0fc6-ao-3"/>
+  <rect fill="#FFEBA2" stroke="#2D2D2D" x="324.99235" y="155.19848" width="230.53435" height="32.06107" id="0c710f5f944547f5acef8d2da0ca0fc6-ao-4"/>
+  <rect fill="#FFEBA2" stroke="#2D2D2D" x="324.229" y="199.47328" width="230.53435" height="32.06107" id="0c710f5f944547f5acef8d2da0ca0fc6-ao-5"/>
+  
+  <rect fill="#FFEBA2" x="328.04579" y="277.33588" width="230.53435" height="59.54199" id="0c710f5f944547f5acef8d2da0ca0fc6-ao-7" stroke="#2D2D2D"/>
+  <rect fill="#FFEBA2" stroke="#2D2D2D" x="326.51907" y="355.96183" width="230.53435" height="32.06107" id="0c710f5f944547f5acef8d2da0ca0fc6-ao-8"/>
+  <rect fill="#FFEBA2" stroke="#2D2D2D" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="324.229" y="401" width="306.10687" height="26.71756" id="0c710f5f944547f5acef8d2da0ca0fc6-ao-9"/>
+  <rect fill="#FFEBA2" stroke="#2D2D2D" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="324.22899" y="434.58778" width="306.10687" height="26.71756" id="0c710f5f944547f5acef8d2da0ca0fc6-ao-10"/>
+  <rect fill="#FFEBA2" stroke="#2D2D2D" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="324.99236" y="468.17557" width="306.10687" height="26.71756" id="0c710f5f944547f5acef8d2da0ca0fc6-ao-11"/>
+ </g>
+</svg>

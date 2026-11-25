@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1090" height="351">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+  <g id="svg_10">
+   <rect id="svg_8" height="96.61017" width="289.83052" y="240.52544" x="387.96616" stroke="#2D2D2D" fill="#FFEBA2"/>
+   <rect id="svg_9" height="103.38983" width="383.89832" y="238.83052" x="689.66108" stroke="#2D2D2D" fill="#FFEBA2"/>
+  </g>
+  <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_11" y="186.28815" x="212.54243" stroke-width="0" fill="#000000">1st muscle affected</text>
+ </g>
+ <g>
+  <title>Masks</title>
+  <rect id="514f65a98fd8493db2f36a42c633e843-ao-1" height="35.59322" width="83.89831" y="49.84746" x="321.86446" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="514f65a98fd8493db2f36a42c633e843-ao-2" height="34.74576" width="77.9661" y="54.93221" x="691.356" stroke="#2D2D2D" fill="#FFEBA2"/>
+  
+  <rect id="514f65a98fd8493db2f36a42c633e843-ao-4" height="33.89831" width="72.0339" y="105.77967" x="793.89838" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="514f65a98fd8493db2f36a42c633e843-ao-5" height="68.64407" width="328.81357" y="154.93221" x="326.10175" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="514f65a98fd8493db2f36a42c633e843-ao-6" height="72.0339" width="305.08476" y="154.93221" x="692.20346" stroke="#2D2D2D" fill="#FFEBA2"/>
+ </g>
+</svg>

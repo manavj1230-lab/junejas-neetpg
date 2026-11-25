@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1118" height="194">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+ </g>
+ <g>
+  <title>Masks</title>
+  <rect stroke="#2D2D2D" stroke-width="0" id="0002527c28b640a59dd056d5415cd15a-ao-1" height="35.08772" width="131.57894" y="13.50218" x="403.9298" fill="#dbf1f9"/>
+  <g id="0002527c28b640a59dd056d5415cd15a-ao-2">
+   <rect height="75.4386" width="899.99999" y="101.22148" x="12.70174" stroke="#2D2D2D" fill="#FFEBA2"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="149.90569" x="517.96488" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">organisms</text>
+  </g>
+  <g id="0002527c28b640a59dd056d5415cd15a-ao-3" class="qshape">
+   <rect height="28.07018" width="875.43858" y="66.13376" x="16.21051" stroke="#2D2D2D" fill="#FF7E7E" class="qshape"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="85.432" x="500.42103" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">salt requirement</text>
+  </g>
+ </g>
+</svg>

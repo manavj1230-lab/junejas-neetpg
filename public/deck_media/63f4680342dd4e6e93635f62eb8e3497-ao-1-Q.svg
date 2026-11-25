@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1106" height="202">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+ </g>
+ <g>
+  <title>Masks</title>
+  <g id="63f4680342dd4e6e93635f62eb8e3497-ao-1" class="qshape">
+   <rect stroke="#2D2D2D" height="22.4138" width="929.31037" y="125.83836" x="45.72417" fill="#FF7E7E" class="qshape"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="143.25862" x="481.06897" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">symptoms</text>
+  </g>
+  <g id="63f4680342dd4e6e93635f62eb8e3497-ao-2">
+   <rect height="27.58621" width="989.6552" y="91.3556" x="47.44831" stroke="#2D2D2D" fill="#FFEBA2"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="110.32112" x="471.58625" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">onset</text>
+  </g>
+ </g>
+</svg>

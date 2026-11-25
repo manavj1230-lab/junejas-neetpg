@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="814" height="201.00000000000003">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+  <line id="svg_3" y2="84.44305" x2="577.77216" y1="82.54432" x1="489.79748" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="null" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" id="svg_4" y="89.50634" x="637.26584" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">dark skin</text>
+ </g>
+ <g>
+  <title>Masks</title>
+  <rect id="c98f7d5c04ae4625ad123c05e913014f-ao-1" height="37.34177" width="249.3671" y="120.519" x="192.32911" stroke="#2D2D2D" fill="#FFEBA2"/>
+  <rect id="c98f7d5c04ae4625ad123c05e913014f-ao-2" height="37.34177" width="249.3671" y="117.98736" x="492.32913" stroke="#2D2D2D" fill="#FF7E7E" class="qshape"/>
+ </g>
+</svg>

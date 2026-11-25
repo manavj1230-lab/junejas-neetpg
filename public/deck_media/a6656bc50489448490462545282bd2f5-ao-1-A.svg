@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="270">
+ <!-- Created with Image Occlusion Enhanced -->
+ <g>
+  <title>Labels</title>
+ </g>
+ <g>
+  <title>Masks</title>
+  
+  <g id="a6656bc50489448490462545282bd2f5-ao-2"/>
+  <g id="a6656bc50489448490462545282bd2f5-ao-3"/>
+  <g id="a6656bc50489448490462545282bd2f5-ao-4">
+   <g>
+    <rect height="45.63107" width="123.30098" y="189.70873" x="108.6408" stroke="#2D2D2D" fill="#FFEBA2"/>
+    <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="218.10678" x="170.29125" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">function</text>
+   </g>
+   <g>
+    <rect height="28.15534" width="252.42719" y="224.66019" x="337.76703" stroke="#2D2D2D" fill="#FFEBA2"/>
+    <text xml:space="preserve" text-anchor="middle" font-family="'Arial', 'Helvetica LT Std', Arial, sans-serif" font-size="24" y="244.32038" x="472.23301" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">function</text>
+   </g>
+  </g>
+ </g>
+</svg>
