@@ -25,8 +25,8 @@ interface SubscriptionModalProps {
 
 type PlanType = 'lifetime' | 'annual' | 'monthly';
 
-const UPI_ID = '9915799043@pthdfc';
-const PAYEE_NAME = 'Gurmehar Juneja';
+const UPI_ID = 'junejaneetanki@ptyes';
+const PAYEE_NAME = "Juneja's NEET PG";
 
 const PLAN_DETAILS: Record<PlanType, { label: string; amount: number; subtitle: string }> = {
   lifetime: { label: 'Lifetime Access', amount: 1500, subtitle: 'One-time payment' },
@@ -195,7 +195,7 @@ export function SubscriptionUpgradeModal({
               <div className="mx-auto w-52 bg-white rounded-2xl p-2 shadow-xl border border-slate-700 overflow-hidden">
                 <img
                   src="/upi-qr.png"
-                  alt="Gurmehar Juneja UPI QR Code"
+                  alt="Juneja's UPI QR Code"
                   className="w-full h-auto rounded-xl object-contain"
                 />
               </div>
