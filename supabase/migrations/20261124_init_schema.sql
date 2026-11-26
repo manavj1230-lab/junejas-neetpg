@@ -66,10 +66,15 @@ ALTER TABLE public.flashcards ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.user_selected_decks ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.user_card_progress ENABLE ROW LEVEL SECURITY;
 
--- Profile RLS: Users can only read/update their own profile
+-- Profile RLS: Users can only read/insert/update their own profile
 CREATE POLICY "Users can view own profile"
     ON public.profiles FOR SELECT
     USING (auth.uid() = id);
+
+CREATE POLICY "Users can insert own profile"
+    ON public.profiles FOR INSERT
+    TO authenticated
+    WITH CHECK (auth.uid() = id);
 
 CREATE POLICY "Users can update own profile"
     ON public.profiles FOR UPDATE
