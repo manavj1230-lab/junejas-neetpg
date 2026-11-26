@@ -427,7 +427,7 @@ export function StudyPlayer({ queue, onReviewCard, onUndoCard, onExit }: StudyPl
             setIsAnswerRevealed(true);
           }
         }}
-        className={`flex-1 p-4 pb-24 flex flex-col justify-start overflow-y-auto select-none ${
+        className={`flex-1 p-4 pb-36 flex flex-col justify-start overflow-y-auto select-none ${
           !isAnswerRevealed ? 'cursor-pointer active:opacity-95' : ''
         }`}
       >
