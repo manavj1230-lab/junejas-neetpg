@@ -74,6 +74,7 @@ export default function Home() {
   const [studiedTodayCount, setStudiedTodayCount] = useState<number>(0);
   const [studiedTodayNewCount, setStudiedTodayNewCount] = useState<number>(0);
   const [studiedTodaySeconds, setStudiedTodaySeconds] = useState<number>(0);
+  const [isSimulated, setIsSimulated] = useState<boolean>(false);
 
   // Anki-Style Daily Limits & Per-Deck Activity Tracking
   const [deckLimits, setDeckLimits] = useState<Record<string, DeckDailyLimit>>({});
@@ -116,6 +117,23 @@ export default function Home() {
   }, [studiedTodayCount]);
 
   useEffect(() => {
+    // Auto-revert any temporary Days 2-4 simulation on next visit/reload
+    const simSnapRaw = localStorage.getItem('junejas_sim_snapshot');
+    if (simSnapRaw) {
+      try {
+        const snap = JSON.parse(simSnapRaw);
+        localStorage.setItem('neetpg_card_progress', snap.cardProgress ?? '{}');
+        localStorage.setItem('neetpg_selected_decks', snap.selectedDecks ?? '[]');
+        localStorage.setItem('neetpg_review_history', snap.reviewHistory ?? '{}');
+        localStorage.setItem('neetpg_new_history', snap.newHistory ?? '{}');
+        localStorage.setItem('neetpg_studied_today_count', String(snap.studiedTodayCount ?? 0));
+        localStorage.setItem('neetpg_studied_today_seconds', String(snap.studiedTodaySeconds ?? 0));
+      } catch {
+        // ignore corrupt snapshot
+      }
+      localStorage.removeItem('junejas_sim_snapshot');
+    }
+
     const onboardingDone = localStorage.getItem('neetpg_onboarding_completed') === 'true';
     setHasCompletedOnboarding(onboardingDone);
 
@@ -378,6 +396,20 @@ export default function Home() {
   // Simulate Days 2, 3, and 4 on top of existing Day 1 progress (30 new cards/subject/day)
   const simulateDays2To4 = () => {
     if (!user) return;
+    if (!localStorage.getItem('junejas_sim_snapshot')) {
+      localStorage.setItem(
+        'junejas_sim_snapshot',
+        JSON.stringify({
+          cardProgress: localStorage.getItem('neetpg_card_progress') ?? JSON.stringify(cardProgressMap),
+          selectedDecks: localStorage.getItem('neetpg_selected_decks') ?? JSON.stringify(selectedDeckIds),
+          reviewHistory: localStorage.getItem('neetpg_review_history') ?? '{}',
+          newHistory: localStorage.getItem('neetpg_new_history') ?? '{}',
+          studiedTodayCount,
+          studiedTodayNewCount,
+          studiedTodaySeconds,
+        })
+      );
+    }
     const now = new Date();
     now.setHours(12, 0, 0, 0);
     const DAY_MS = 24 * 60 * 60 * 1000;
@@ -529,6 +561,35 @@ export default function Home() {
     const sec = Math.max(day4New * 5, 60);
     setStudiedTodaySeconds(sec);
     localStorage.setItem('neetpg_studied_today_seconds', String(sec));
+    setIsSimulated(true);
+  };
+
+  // Revert Days 2-4 simulation back to the user's real progress
+  const revertSimulation = () => {
+    const simSnapRaw = localStorage.getItem('junejas_sim_snapshot');
+    if (simSnapRaw) {
+      try {
+        const snap = JSON.parse(simSnapRaw);
+        const restoredMap = JSON.parse(snap.cardProgress ?? '{}');
+        const restoredDecks = JSON.parse(snap.selectedDecks ?? '[]');
+        localStorage.setItem('neetpg_card_progress', snap.cardProgress ?? '{}');
+        localStorage.setItem('neetpg_selected_decks', snap.selectedDecks ?? '[]');
+        localStorage.setItem('neetpg_review_history', snap.reviewHistory ?? '{}');
+        localStorage.setItem('neetpg_new_history', snap.newHistory ?? '{}');
+        localStorage.setItem('neetpg_studied_today_count', String(snap.studiedTodayCount ?? 0));
+        localStorage.setItem('neetpg_studied_today_seconds', String(snap.studiedTodaySeconds ?? 0));
+
+        setCardProgressMap(restoredMap);
+        setSelectedDeckIds(restoredDecks);
+        setStudiedTodayCount(snap.studiedTodayCount ?? 0);
+        setStudiedTodayNewCount(snap.studiedTodayNewCount ?? 0);
+        setStudiedTodaySeconds(snap.studiedTodaySeconds ?? 0);
+      } catch {
+        // ignore parse error
+      }
+      localStorage.removeItem('junejas_sim_snapshot');
+    }
+    setIsSimulated(false);
   };
 
   // Real-time card persistence: immediately saves every rated card (even if user exits early with X)
@@ -805,18 +866,30 @@ export default function Home() {
         {/* 1. Left Tab: Today's Study (Dashboard Overview) */}
         {activeTab === 'home' && (
           <main className="flex-1 p-4 space-y-4 animate-in fade-in duration-200">
-            {/* Prominent Dev Action Bar: Simulate Days 2-4 */}
+            {/* Prominent Dev Action Bar: Simulate Days 2-4 / Undo Simulation */}
             <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-sky-950/40 border border-sky-500/30 text-xs">
               <span className="text-slate-300 text-[11px]">
-                Test multi-day streak, Due queue &amp; Trend Graph:
+                {isSimulated
+                  ? 'Simulation active (auto-reverts on next visit):'
+                  : 'Test multi-day streak, Due queue & Trend Graph:'}
               </span>
-              <button
-                type="button"
-                onClick={simulateDays2To4}
-                className="px-2.5 py-1 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-[11px] shrink-0 shadow transition-colors"
-              >
-                Simulate Days 2–4
-              </button>
+              {isSimulated ? (
+                <button
+                  type="button"
+                  onClick={revertSimulation}
+                  className="px-2.5 py-1 rounded-lg bg-rose-500 hover:bg-rose-400 text-slate-950 font-bold text-[11px] shrink-0 shadow transition-colors"
+                >
+                  Undo Simulation
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={simulateDays2To4}
+                  className="px-2.5 py-1 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-[11px] shrink-0 shadow transition-colors"
+                >
+                  Simulate Days 2–4
+                </button>
+              )}
             </div>
 
             {/* 1. Study Streak & Activity Heatmap Card (300 Goal, New Cards Toggle & Trend Graph) */}
@@ -897,12 +970,21 @@ export default function Home() {
 
             {/* Quick Developer Actions: Simulate 4-Day Streak & Reset Demo User */}
             <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
-              <button
-                onClick={simulateDays2To4}
-                className="text-[11px] text-sky-400 hover:text-sky-300 font-medium transition-colors"
-              >
-                Simulate Days 2–4 (+30 cards/subject/day)
-              </button>
+              {isSimulated ? (
+                <button
+                  onClick={revertSimulation}
+                  className="text-[11px] text-rose-400 hover:text-rose-300 font-medium transition-colors"
+                >
+                  Undo Simulation
+                </button>
+              ) : (
+                <button
+                  onClick={simulateDays2To4}
+                  className="text-[11px] text-sky-400 hover:text-sky-300 font-medium transition-colors"
+                >
+                  Simulate Days 2–4 (+30 cards/subject/day)
+                </button>
+              )}
               <span className="text-slate-700">•</span>
               <button
                 onClick={resetDemoUser}
