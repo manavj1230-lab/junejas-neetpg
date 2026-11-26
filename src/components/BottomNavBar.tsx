@@ -12,7 +12,7 @@ interface BottomNavBarProps {
 
 export function BottomNavBar({ activeTab, onTabChange }: BottomNavBarProps) {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-30 bg-slate-950/95 backdrop-blur-md border-t border-slate-800/80">
+    <nav className="fixed bottom-0 left-0 right-0 z-30 bg-slate-950/95 backdrop-blur-md border-t border-slate-800/80 pb-12">
       <div className="max-w-md mx-auto flex items-center justify-around h-16 px-1">
         {/* 1. Left Tab: Today's Study */}
         <button

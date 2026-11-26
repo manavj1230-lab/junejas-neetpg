@@ -769,7 +769,7 @@ export default function Home() {
   // Main App Shell (Mobile-First Container)
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex justify-center">
-      <div className="w-full max-w-md bg-slate-900 border-x border-slate-800/80 min-h-screen flex flex-col relative pb-20 shadow-2xl">
+      <div className="w-full max-w-md bg-slate-900 border-x border-slate-800/80 min-h-screen flex flex-col relative pb-32 shadow-2xl">
         {/* Sticky App Header */}
         <AppHeader
           onOpenUpgradeModal={() => setShowUpgradeModal(true)}

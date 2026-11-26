@@ -17,7 +17,7 @@ export function AppHeader({
   onOpenInstallModal,
   showInstallButton = false,
 }: AppHeaderProps) {
-  const { user, profile, daysRemaining, isTrialActive, signOut, simulateTrialExpiry } = useAuth();
+  const { user, profile, daysRemaining, isTrialActive, signOut } = useAuth();
 
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between px-4 py-3 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 text-slate-100">
@@ -61,20 +61,9 @@ export function AppHeader({
           </button>
         )}
 
-        {/* Developer / Reviewer Testing Dropdown / Buttons */}
+        {/* Sign Out Button */}
         {user && (
           <div className="flex items-center gap-1">
-            {!profile?.is_subscribed && (
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={simulateTrialExpiry}
-                title="Reviewer Tool: Test Trial Expiry Gate"
-                className="h-7 text-[10px] text-slate-400 hover:text-amber-300 hover:bg-amber-500/10 px-2"
-              >
-                Test Lock
-              </Button>
-            )}
             <Button
               variant="ghost"
               size="sm"

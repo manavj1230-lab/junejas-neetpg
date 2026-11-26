@@ -542,7 +542,7 @@ export function StudyPlayer({ queue, onReviewCard, onUndoCard, onExit }: StudyPl
       </div>
 
       {/* Pure Anki Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-3 bg-slate-950/95 backdrop-blur-lg border-t border-slate-800/90 z-30">
+      <div className="fixed bottom-0 left-0 right-0 max-w-md mx-auto px-3 pt-3 pb-12 bg-slate-950/95 backdrop-blur-lg border-t border-slate-800/90 z-30">
         {!isAnswerRevealed ? (
           /* 1. Before Flip: Minimalist Anki "Show Answer" Bar */
           <button
