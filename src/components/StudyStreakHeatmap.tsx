@@ -34,7 +34,7 @@ export function StudyStreakHeatmap({
   onSelectDay,
   selectedDateStr,
 }: StudyStreakHeatmapProps) {
-  const [activeRange, setActiveRange] = useState<RangeFilter>('365D');
+  const [activeRange, setActiveRange] = useState<RangeFilter>('30D');
   const [metricFilter, setMetricFilter] = useState<MetricFilter>('all');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [hoveredDay, setHoveredDay] = useState<HeatmapDay | null>(null);
