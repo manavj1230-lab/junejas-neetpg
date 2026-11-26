@@ -1,6 +1,7 @@
 import { MBBSYear, Flashcard, MnemonicBreakdown } from '@/types/database';
 
 import anatomyCardsRaw from '@/data/decks/anatomy.json';
+import physiologyCardsRaw from '@/data/decks/physiology.json';
 import biochemistryCardsRaw from '@/data/decks/biochemistry.json';
 import microbiologyCardsRaw from '@/data/decks/microbiology.json';
 import pharmacologyCardsRaw from '@/data/decks/pharmacology.json';
@@ -90,6 +91,17 @@ const SUBJECT_TOPIC_RULES: Record<string, TopicRule[]> = {
     { slug: 'abdomen-pelvis', name: 'Abdomen & Pelvis', match: (t) => t.includes('abdomen') || t.includes('pelvis') || t.includes('perineum') },
     { slug: 'head-neck', name: 'Head & Neck', match: (t) => t.includes('head,_neck') || t.includes('head_and_neck') },
     { slug: 'neuroanatomy', name: 'Neuroanatomy', match: (t) => t.includes('neuroanatomy') },
+  ],
+  'deck-physiology': [
+    { slug: 'general-physiology', name: 'General Physiology', match: (t) => t.includes('generalphysiology') || t.includes('homeostasis') || t.includes('cellmembrane') || t.includes('membranetransport') || t.includes('bodyfluids') },
+    { slug: 'nerve-muscle', name: 'Nerve & Muscle', match: (t) => t.includes('nervemuscle') || t.includes('skeletalmuscle') || t.includes('smoothmuscle') || t.includes('actionpotential') || t.includes('nmj') },
+    { slug: 'cvs', name: 'Cardiovascular (CVS)', match: (t) => t.includes('cardiovascular') || t.includes('cvs') || t.includes('hemodynamics') || t.includes('cardiacmuscle') || t.includes('ecg') },
+    { slug: 'respiratory', name: 'Respiratory', match: (t) => t.includes('respiratory') || t.includes('surfactant') || t.includes('ventilation') },
+    { slug: 'renal', name: 'Renal & Acid-Base', match: (t) => t.includes('renal') || t.includes('acidbase') },
+    { slug: 'git', name: 'GIT', match: (t) => t.includes('git') || t.includes('motility') },
+    { slug: 'endocrine-repro', name: 'Endocrine & Reproduction', match: (t) => t.includes('endocrine') || t.includes('reproduction') },
+    { slug: 'neurophysiology', name: 'Neurophysiology & Special Senses', match: (t) => t.includes('neurophysiology') || t.includes('cns') || t.includes('vision') || t.includes('reflexes') || t.includes('basalganglia') || t.includes('neurotransmitters') },
+    { slug: 'hematology', name: 'Hematology', match: (t) => t.includes('hematology') },
   ],
   'deck-biochemistry': [
     { slug: 'enzymes', name: 'Enzymes', match: (t) => t.includes('enzymes') },
@@ -186,6 +198,7 @@ export const REAL_DECKS: Record<string, RealDeckInfo> = {
   'deck-pharmacology': createDeckInfo('deck-pharmacology', 'Pharmacology', '2nd Prof', pharmacologyCardsRaw as RawCardWithTags[]),
   'deck-microbiology': createDeckInfo('deck-microbiology', 'Microbiology', '2nd Prof', microbiologyCardsRaw as RawCardWithTags[]),
   'deck-anatomy': createDeckInfo('deck-anatomy', 'Anatomy', '1st Prof', anatomyCardsRaw as RawCardWithTags[]),
+  'deck-physiology': createDeckInfo('deck-physiology', 'Physiology', '1st Prof', physiologyCardsRaw as RawCardWithTags[]),
   'deck-biochemistry': createDeckInfo('deck-biochemistry', 'Biochemistry', '1st Prof', biochemistryCardsRaw as RawCardWithTags[]),
   'deck-orthopedics': createDeckInfo('deck-orthopedics', 'Orthopedics', 'Final Prof', orthopedicsCardsRaw as RawCardWithTags[]),
   'deck-dermatology': createDeckInfo('deck-dermatology', 'Dermatology', 'Final Prof', dermatologyCardsRaw as RawCardWithTags[]),
@@ -193,7 +206,7 @@ export const REAL_DECKS: Record<string, RealDeckInfo> = {
 
 // Grouped by MBBS Year for Browse Decks drill-down
 export const REAL_DECKS_BY_YEAR: Record<MBBSYear, RealDeckInfo[]> = {
-  '1st Prof': [REAL_DECKS['deck-anatomy'], REAL_DECKS['deck-biochemistry']],
+  '1st Prof': [REAL_DECKS['deck-anatomy'], REAL_DECKS['deck-physiology'], REAL_DECKS['deck-biochemistry']],
   '2nd Prof': [REAL_DECKS['deck-pharmacology'], REAL_DECKS['deck-microbiology']],
   '3rd Prof Part 1': [],
   'Final Prof': [REAL_DECKS['deck-orthopedics'], REAL_DECKS['deck-dermatology']],

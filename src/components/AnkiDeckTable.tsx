@@ -78,6 +78,7 @@ export function AnkiDeckTable({
       'deck-pharmacology',
       'deck-microbiology',
       'deck-anatomy',
+      'deck-physiology',
       'deck-biochemistry',
       'deck-orthopedics',
       'deck-dermatology',

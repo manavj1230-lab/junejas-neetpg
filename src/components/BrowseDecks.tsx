@@ -21,7 +21,6 @@ import {
 } from 'lucide-react';
 
 const COMING_SOON_SUBJECTS: { name: string; year: string }[] = [
-  { name: 'Physiology', year: '1st Prof' },
   { name: 'Pathology', year: '2nd Prof' },
   { name: 'Forensic Medicine (FMT)', year: '2nd Prof' },
   { name: 'Community Medicine (PSM)', year: '3rd Prof Part 1' },

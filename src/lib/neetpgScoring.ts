@@ -42,8 +42,8 @@ export const SUBJECT_MARKS_CONFIG: Record<string, SubjectMarksInfo> = {
   Anaesthesia: { questions: 4.5, maxMarks: 18 },
 };
 
-// Total marks pool for currently imported 6 decks (72 + 72 + 61 + 58 + 25 + 22)
-export const IMPORTED_SUBJECTS_MAX_MARKS = 72 + 72 + 61 + 58 + 25 + 22; // 310 Marks
+// Total marks pool for currently imported 7 decks (72 + 72 + 61 + 61 + 58 + 25 + 22)
+export const IMPORTED_SUBJECTS_MAX_MARKS = 72 + 72 + 61 + 61 + 58 + 25 + 22; // 371 Marks
 
 export interface SubjectProgressMarks {
   subject: string;
