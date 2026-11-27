@@ -17,8 +17,17 @@ import {
   Eye,
   CheckCircle2,
   Play,
-  Clock
+  Clock,
+  Flame
 } from 'lucide-react';
+
+const RATTAFIED_DECK_IDS = [
+  'deck-anatomy',
+  'deck-biochemistry',
+  'deck-pharmacology',
+  'deck-microbiology',
+  'deck-orthopedics',
+];
 
 const COMING_SOON_SUBJECTS: { name: string; year: string }[] = [
   { name: 'Pathology', year: '2nd Prof' },
@@ -49,7 +58,7 @@ interface BrowseDecksProps {
 
 export function BrowseDecks({ selectedDeckIds, onToggleDeck, onLaunchStudy }: BrowseDecksProps) {
   // Navigation State
-  const [selectedYear, setSelectedYear] = useState<MBBSYear | 'COMING_SOON' | null>(null);
+  const [selectedYear, setSelectedYear] = useState<MBBSYear | 'RATTAFIED' | 'COMING_SOON' | null>(null);
 
   // Preview Modal State
   const [previewDeck, setPreviewDeck] = useState<RealDeckInfo | null>(null);
@@ -81,7 +90,11 @@ export function BrowseDecks({ selectedDeckIds, onToggleDeck, onLaunchStudy }: Br
             <>
               <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
               <span className="text-[#111827] dark:text-[#eef2f6] font-semibold shrink-0">
-                {selectedYear === 'COMING_SOON' ? 'Coming Soon' : YEAR_LABELS[selectedYear]}
+                {selectedYear === 'COMING_SOON'
+                  ? 'Coming Soon'
+                  : selectedYear === 'RATTAFIED'
+                  ? 'Rattafied Topics'
+                  : YEAR_LABELS[selectedYear]}
               </span>
             </>
           )}
@@ -111,6 +124,43 @@ export function BrowseDecks({ selectedDeckIds, onToggleDeck, onLaunchStudy }: Br
           </div>
 
           <div className="grid gap-3">
+            {/* Rattafied Topics (On top of 1st Prof) */}
+            {(() => {
+              const rattaDecks = RATTAFIED_DECK_IDS.map((id) => REAL_DECKS[id]).filter(Boolean);
+              const rattaTotalCards = rattaDecks.reduce((acc, d) => acc + d.cardCount, 0);
+              const rattaActiveDecks = rattaDecks.filter((d) => selectedDeckIds.includes(d.id)).length;
+              return (
+                <Card
+                  onClick={() => setSelectedYear('RATTAFIED')}
+                  className="bg-white dark:bg-[#181e28] border-amber-300/80 dark:border-amber-500/30 rounded-3xl hover:border-amber-400 dark:hover:border-amber-400/60 cursor-pointer transition-colors active:scale-[0.99] group shadow-[0_2px_12px_rgba(15,23,42,0.04)] dark:shadow-none"
+                >
+                  <CardContent className="p-4 flex items-center justify-between">
+                    <div className="flex items-center gap-3.5">
+                      <div className="w-11 h-11 rounded-2xl bg-amber-50 dark:bg-amber-500/15 border border-amber-200/80 dark:border-amber-500/30 flex items-center justify-center text-amber-600 dark:text-amber-400">
+                        <Flame className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <h3 className="text-sm font-bold text-[#111827] dark:text-[#eef2f6]">
+                            Rattafied Topics
+                          </h3>
+                          {rattaActiveDecks > 0 && (
+                            <Badge className="bg-emerald-50 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-200/80 dark:border-emerald-500/30 rounded-full text-[10px] px-2 py-0">
+                              {rattaActiveDecks} Active
+                            </Badge>
+                          )}
+                        </div>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                          {rattaDecks.length} Must-Memorize Subjects • {rattaTotalCards.toLocaleString()} Real Flashcards
+                        </p>
+                      </div>
+                    </div>
+                    <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-[#111827] dark:group-hover:text-[#eef2f6] transition-colors" />
+                  </CardContent>
+                </Card>
+              );
+            })()}
+
             {years.map((yr) => {
               const { decksCount, totalCards, activeDecks } = getYearStats(yr);
               return (
@@ -215,18 +265,27 @@ export function BrowseDecks({ selectedDeckIds, onToggleDeck, onLaunchStudy }: Br
         </div>
       )}
 
-      {/* LEVEL 2B: REAL DECKS UNDER SELECTED YEAR */}
+      {/* LEVEL 2B: REAL DECKS UNDER SELECTED YEAR OR RATTAFIED TOPICS */}
       {selectedYear && selectedYear !== 'COMING_SOON' && (
         <div className="space-y-3">
           <div className="mb-2">
-            <h2 className="text-lg font-bold text-[#111827] dark:text-[#eef2f6]">{YEAR_LABELS[selectedYear]} Real Decks</h2>
+            <h2 className="text-lg font-bold text-[#111827] dark:text-[#eef2f6]">
+              {selectedYear === 'RATTAFIED'
+                ? 'Rattafied Topics'
+                : `${YEAR_LABELS[selectedYear]} Real Decks`}
+            </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              Toggle subjects to include in your daily FSRS queue or study them directly.
+              {selectedYear === 'RATTAFIED'
+                ? 'The 5 core ratta subjects you have to master: Anatomy, Biochemistry, Pharmacology, Microbiology & Ortho.'
+                : 'Toggle subjects to include in your daily FSRS queue or study them directly.'}
             </p>
           </div>
 
           <div className="grid gap-3">
-            {(REAL_DECKS_BY_YEAR[selectedYear] || []).map((deck) => {
+            {(selectedYear === 'RATTAFIED'
+              ? RATTAFIED_DECK_IDS.map((id) => REAL_DECKS[id]).filter(Boolean)
+              : REAL_DECKS_BY_YEAR[selectedYear] || []
+            ).map((deck) => {
               const isInQueue = selectedDeckIds.includes(deck.id);
 
               return (
