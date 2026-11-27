@@ -7,6 +7,7 @@ import microbiologyCardsRaw from '@/data/decks/microbiology.json';
 import pharmacologyCardsRaw from '@/data/decks/pharmacology.json';
 import orthopedicsCardsRaw from '@/data/decks/orthopedics.json';
 import dermatologyCardsRaw from '@/data/decks/dermatology.json';
+import forensicCardsRaw from '@/data/decks/forensic.json';
 
 export interface SubDeckInfo {
   id: string;       // e.g. 'deck-pharmacology::ans'
@@ -127,6 +128,15 @@ const SUBJECT_TOPIC_RULES: Record<string, TopicRule[]> = {
     { slug: 'pigmentary-appendages', name: 'Pigmentary & Hair/Nail Disorders', match: (t) => t.includes('pigmentary') || t.includes('appendages') },
     { slug: 'drug-reactions-tumors', name: 'Drug Reactions, Geno & Tumors', match: (t) => t.includes('drug') || t.includes('genodermatoses') || t.includes('rheumatology') || t.includes('tumor') || t.includes('tumour') },
   ],
+  'deck-forensic': [
+    { slug: 'traumatology', name: 'Traumatology & Mechanical Injuries', match: (t) => t.includes('traumatology') || t.includes('mechanicalinjuries') || t.includes('abrasion') || t.includes('contusion') || t.includes('laceration') || t.includes('incision') || t.includes('stabwound') || t.includes('chopwound') || t.includes('skullfracture') || t.includes('braininjury') || t.includes('burns') || t.includes('thermal') || t.includes('electrocution') || t.includes('lightning') || t.includes('blastinjury') },
+    { slug: 'toxicology', name: 'Toxicology & Poisoning', match: (t) => t.includes('toxicology') || t.includes('snakevenom') || t.includes('poison') },
+    { slug: 'ballistics', name: 'Forensic Ballistics', match: (t) => t.includes('ballistics') || t.includes('ammunition') || t.includes('gunranges') || t.includes('entrywound') || t.includes('contactshot') || t.includes('shotgun') || t.includes('gsr') },
+    { slug: 'asphyxia', name: 'Asphyxial Deaths & Drowning', match: (t) => t.includes('asphyxia') || t.includes('hanging') || t.includes('drowning') || t.includes('strangulation') },
+    { slug: 'thanatology-autopsy', name: 'Thanatology, Autopsy & Putrefaction', match: (t) => t.includes('thanatology') || t.includes('autopsy') || t.includes('putrefaction') },
+    { slug: 'identification', name: 'Identification, Ossification & Trace Evidence', match: (t) => t.includes('identification') || t.includes('ossification') || t.includes('traceevidence') || t.includes('fingerprinting') },
+    { slug: 'jurisprudence', name: 'Jurisprudence, BNS & Sexual Offences', match: (t) => t.includes('jurisprudence') || t.includes('legalsystem') || t.includes('bns') || t.includes('sexualjurisprudence') },
+  ],
 };
 
 function buildSubDecks(
@@ -200,6 +210,7 @@ export const REAL_DECKS: Record<string, RealDeckInfo> = {
   'deck-anatomy': createDeckInfo('deck-anatomy', 'Anatomy', '1st Prof', anatomyCardsRaw as RawCardWithTags[]),
   'deck-physiology': createDeckInfo('deck-physiology', 'Physiology', '1st Prof', physiologyCardsRaw as RawCardWithTags[]),
   'deck-biochemistry': createDeckInfo('deck-biochemistry', 'Biochemistry', '1st Prof', biochemistryCardsRaw as RawCardWithTags[]),
+  'deck-forensic': createDeckInfo('deck-forensic', 'Forensic Medicine', '3rd Prof Part 1', forensicCardsRaw as RawCardWithTags[]),
   'deck-orthopedics': createDeckInfo('deck-orthopedics', 'Orthopedics', 'Final Prof', orthopedicsCardsRaw as RawCardWithTags[]),
   'deck-dermatology': createDeckInfo('deck-dermatology', 'Dermatology', 'Final Prof', dermatologyCardsRaw as RawCardWithTags[]),
 };
@@ -208,7 +219,7 @@ export const REAL_DECKS: Record<string, RealDeckInfo> = {
 export const REAL_DECKS_BY_YEAR: Record<MBBSYear, RealDeckInfo[]> = {
   '1st Prof': [REAL_DECKS['deck-anatomy'], REAL_DECKS['deck-physiology'], REAL_DECKS['deck-biochemistry']],
   '2nd Prof': [REAL_DECKS['deck-pharmacology'], REAL_DECKS['deck-microbiology']],
-  '3rd Prof Part 1': [],
+  '3rd Prof Part 1': [REAL_DECKS['deck-forensic']],
   'Final Prof': [REAL_DECKS['deck-orthopedics'], REAL_DECKS['deck-dermatology']],
 };
 

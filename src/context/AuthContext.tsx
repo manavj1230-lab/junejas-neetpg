@@ -13,9 +13,8 @@ interface AuthContextType {
   isLocked: boolean;
   isOrthopedicsUnlocked: boolean;
   signInWithGoogle: () => Promise<void>;
-  signInWithEmail: (email: string) => Promise<void>;
+  signInWithEmail: (email: string) => Promise<{ otpSent?: boolean; error?: string }>;
   signOut: () => Promise<void>;
-  simulateTrialExpiry: () => void;
   upgradeSubscription: () => void;
 }
 
@@ -132,21 +131,39 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const signInWithEmail = async (email: string) => {
+  const signInWithEmail = async (email: string): Promise<{ otpSent?: boolean; error?: string }> => {
     setIsLoading(true);
-    const mockUser = { id: 'mock-med-user-uuid', email: email || 'dr.user@neetpg.in' };
-    const mockProfile: Profile = {
-      id: 'mock-med-user-uuid',
-      email: email || 'dr.user@neetpg.in',
-      trial_start_date: new Date().toISOString(),
-      is_subscribed: false,
-      daily_new_limit: 20
-    };
-    localStorage.setItem('neetpg_mock_user', JSON.stringify(mockUser));
-    localStorage.setItem('neetpg_mock_profile', JSON.stringify(mockProfile));
-    setUser(mockUser);
-    setProfile(mockProfile);
-    setIsLoading(false);
+    try {
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const isLiveSupabase = supabaseUrl && !supabaseUrl.includes('placeholder');
+
+      if (isLiveSupabase) {
+        const supabase = createClient();
+        const { error } = await supabase.auth.signInWithOtp({
+          email,
+          options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
+        });
+        if (error) return { error: error.message };
+        return { otpSent: true };
+      }
+
+      // Demo mode fallback only when Supabase is unconfigured
+      const mockUser = { id: 'mock-med-user-uuid', email: email || 'dr.user@neetpg.in' };
+      const mockProfile: Profile = {
+        id: 'mock-med-user-uuid',
+        email: email || 'dr.user@neetpg.in',
+        trial_start_date: new Date().toISOString(),
+        is_subscribed: false,
+        daily_new_limit: 20,
+      };
+      localStorage.setItem('neetpg_mock_user', JSON.stringify(mockUser));
+      localStorage.setItem('neetpg_mock_profile', JSON.stringify(mockProfile));
+      setUser(mockUser);
+      setProfile(mockProfile);
+      return {};
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const signOut = async () => {
@@ -161,17 +178,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setUser(null);
     setProfile(null);
     setIsLoading(false);
-  };
-
-  const simulateTrialExpiry = () => {
-    if (!profile) return;
-    const expiredProfile = {
-      ...profile,
-      trial_start_date: new Date(Date.now() - 16 * 24 * 60 * 60 * 1000).toISOString(),
-      is_subscribed: false
-    };
-    setProfile(expiredProfile);
-    localStorage.setItem('neetpg_mock_profile', JSON.stringify(expiredProfile));
   };
 
   const upgradeSubscription = () => {
@@ -194,7 +200,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         signInWithGoogle,
         signInWithEmail,
         signOut,
-        simulateTrialExpiry,
         upgradeSubscription
       }}
     >

@@ -280,17 +280,17 @@ export function StudyStreakHeatmap({
   const rangeButtons: RangeFilter[] = ['30D', '60D', '90D', '182D', '365D', '∞'];
 
   return (
-    <div className="w-full bg-[#12161f] border border-[#232734] rounded-2xl p-4 sm:p-5 shadow-2xl select-none space-y-4 animate-in fade-in duration-200">
+    <div className="w-full bg-white dark:bg-[#181e28] border border-slate-200/80 dark:border-[#2a3241] rounded-3xl p-4 sm:p-5 shadow-[0_2px_12px_rgba(15,23,42,0.04)] dark:shadow-none select-none space-y-4 animate-in fade-in duration-200">
       {/* 1. TOP ROW: Streak (Left), Progress Bar (Center), Countdown & Buttons (Right) */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
-        {/* Left: Flame Icon + Streak Box */}
-        <div className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-[#191d26] border border-[#2c3242] shrink-0 w-full sm:w-auto justify-center sm:justify-start">
-          <span className="text-2xl animate-pulse">🔥</span>
+        {/* Left: Streak Box */}
+        <div className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl bg-[#f4f5f7] dark:bg-[#202734] border border-slate-200/70 dark:border-[#2a3241] shrink-0 w-full sm:w-auto justify-center sm:justify-start">
+          <span className="text-xl">🔥</span>
           <div>
-            <div className="text-2xl font-black tracking-tight text-[#f97316] leading-none">
+            <div className="text-2xl font-extrabold tracking-tight text-[#111827] dark:text-[#eef2f6] leading-none tabular-nums">
               {streakDays}
             </div>
-            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
+            <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-1">
               Day Streak
             </div>
           </div>
@@ -299,25 +299,25 @@ export function StudyStreakHeatmap({
         {/* Center: Daily Goal Progress Bar */}
         <div className="flex-1 w-full space-y-1.5 px-1">
           <div className="flex justify-between items-baseline text-xs font-bold">
-            <span className="text-slate-100 font-mono text-sm">
-              {currentTotalToday} <span className="text-slate-400 font-sans font-normal text-xs">/ {dailyGoal}</span>
+            <span className="text-[#111827] dark:text-[#eef2f6] font-mono text-sm tabular-nums">
+              {currentTotalToday} <span className="text-slate-400 dark:text-slate-500 font-sans font-normal text-xs">/ {dailyGoal}</span>
             </span>
-            <span className="text-xs font-semibold text-[#f97316]">
+            <span className="text-xs font-semibold text-amber-600 dark:text-amber-400">
               {remainingCards} left
             </span>
           </div>
 
-          {/* Bright Green Progress Fill */}
-          <div className="w-full h-2 rounded-full bg-[#1e2330] overflow-hidden">
+          {/* Crisp Emerald Progress Fill */}
+          <div className="w-full h-2.5 rounded-full bg-[#eceef2] dark:bg-[#202734] overflow-hidden">
             <div
-              className="h-full bg-[#22c55e] transition-all duration-300 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]"
+              className="h-full bg-[#10b981] transition-colors duration-300 rounded-full"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
 
           <div className="text-center">
-            <span className="text-[11px] font-bold text-[#f59e0b] tracking-wide">
-              ⏳ {remainingCards} cards to lock in today
+            <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 tracking-wide">
+              {remainingCards} cards to lock in today
             </span>
           </div>
         </div>
@@ -325,13 +325,13 @@ export function StudyStreakHeatmap({
         {/* Right: Countdown Timer & Buttons */}
         <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto justify-end">
           {/* Countdown Card */}
-          <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#191d26] border border-[#2c3242]">
-            <Hourglass className="w-5 h-5 text-[#f59e0b] shrink-0 fill-[#f59e0b]/20" />
+          <div className="flex items-center gap-2 px-3 py-2 rounded-2xl bg-[#f4f5f7] dark:bg-[#202734] border border-slate-200/70 dark:border-[#2a3241]">
+            <Hourglass className="w-4 h-4 text-amber-500 shrink-0" />
             <div>
-              <div className="text-xs font-bold text-slate-100 font-mono leading-none">
+              <div className="text-xs font-bold text-[#111827] dark:text-[#eef2f6] font-mono leading-none tabular-nums">
                 {timeLeftStr}
               </div>
-              <div className="text-[9px] font-semibold text-slate-400 uppercase tracking-wider mt-0.5">
+              <div className="text-[9px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-0.5">
                 Until 4:00
               </div>
             </div>
@@ -341,17 +341,17 @@ export function StudyStreakHeatmap({
           <div className="flex flex-col gap-1">
             <button
               onClick={() => setIsSettingsOpen(true)}
-              className="px-2.5 py-1 text-[11px] font-medium text-slate-300 bg-[#1c212c] hover:bg-[#252c3b] border border-[#2c3242] rounded-lg transition-colors flex items-center gap-1"
+              className="px-2.5 py-1 text-[11px] font-medium text-slate-700 dark:text-slate-200 bg-[#f4f5f7] dark:bg-[#202734] hover:bg-slate-200/70 dark:hover:bg-[#2a3241] border border-slate-200/80 dark:border-[#2a3241] rounded-xl transition-colors flex items-center gap-1"
             >
-              <Settings className="w-3 h-3 text-slate-400" />
+              <Settings className="w-3 h-3 text-slate-500 dark:text-slate-400" />
               Settings
             </button>
             <button
               onClick={() => setIsDayOff(!isDayOff)}
-              className={`px-2.5 py-1 text-[11px] font-medium rounded-lg border transition-colors flex items-center gap-1 ${
+              className={`px-2.5 py-1 text-[11px] font-medium rounded-xl border transition-colors flex items-center gap-1 ${
                 isDayOff 
-                  ? 'bg-sky-500/20 text-sky-300 border-sky-500/40' 
-                  : 'text-slate-300 bg-[#1c212c] hover:bg-[#252c3b] border-[#2c3242]'
+                  ? 'bg-[#111827] dark:bg-[#eef2f6] text-white dark:text-[#111827] border-[#111827] dark:border-[#eef2f6]' 
+                  : 'text-slate-700 dark:text-slate-200 bg-[#f4f5f7] dark:bg-[#202734] hover:bg-slate-200/70 dark:hover:bg-[#2a3241] border-slate-200/80 dark:border-[#2a3241]'
               }`}
             >
               <span>🏖</span>
@@ -361,7 +361,7 @@ export function StudyStreakHeatmap({
         </div>
       </div>
 
-      <div className="border-t border-[#232734] pt-3 space-y-2.5">
+      <div className="border-t border-slate-200/80 dark:border-[#2a3241] pt-3 space-y-2.5">
         {/* Filter Pills, Metric Toggle & View Mode Toggle */}
         <div className="flex flex-wrap items-center justify-between gap-2">
           {/* Range Pills */}
@@ -370,10 +370,10 @@ export function StudyStreakHeatmap({
               <button
                 key={btn}
                 onClick={() => setActiveRange(btn)}
-                className={`px-2 py-0.5 text-[10px] font-bold rounded-md transition-all ${
+                className={`px-2.5 py-1 text-[10px] font-bold rounded-full transition-colors ${
                   activeRange === btn
-                    ? 'bg-[#22c55e]/15 border border-[#22c55e] text-[#4ade80]'
-                    : 'text-slate-400 hover:text-slate-200 border border-transparent'
+                    ? 'bg-[#111827] dark:bg-[#eef2f6] text-white dark:text-[#111827]'
+                    : 'text-slate-500 dark:text-slate-400 bg-[#f4f5f7] dark:bg-[#202734] hover:text-[#111827] dark:hover:text-[#eef2f6]'
                 }`}
               >
                 {btn}
@@ -383,14 +383,14 @@ export function StudyStreakHeatmap({
 
           {/* Metric Toggle (All Cards vs New Cards Only) + Grid/Graph Toggle */}
           <div className="flex items-center gap-1.5">
-            <div className="inline-flex items-center bg-[#191d26] border border-[#2c3242] rounded-lg p-0.5">
+            <div className="inline-flex items-center bg-[#f4f5f7] dark:bg-[#202734] border border-slate-200/70 dark:border-[#2a3241] rounded-full p-0.5">
               <button
                 type="button"
                 onClick={() => setMetricFilter('all')}
-                className={`px-2 py-0.5 text-[10px] font-semibold rounded-md transition-colors ${
+                className={`px-2.5 py-0.5 text-[10px] font-semibold rounded-full transition-colors ${
                   metricFilter === 'all'
-                    ? 'bg-sky-500/20 text-sky-300'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-[#111827] dark:bg-[#eef2f6] text-white dark:text-[#111827]'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6]'
                 }`}
               >
                 All Cards
@@ -398,25 +398,25 @@ export function StudyStreakHeatmap({
               <button
                 type="button"
                 onClick={() => setMetricFilter('new')}
-                className={`px-2 py-0.5 text-[10px] font-semibold rounded-md transition-colors ${
+                className={`px-2.5 py-0.5 text-[10px] font-semibold rounded-full transition-colors ${
                   metricFilter === 'new'
-                    ? 'bg-sky-500/20 text-sky-300'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-[#111827] dark:bg-[#eef2f6] text-white dark:text-[#111827]'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6]'
                 }`}
               >
                 New Cards Only
               </button>
             </div>
 
-            <div className="inline-flex items-center bg-[#191d26] border border-[#2c3242] rounded-lg p-0.5">
+            <div className="inline-flex items-center bg-[#f4f5f7] dark:bg-[#202734] border border-slate-200/70 dark:border-[#2a3241] rounded-full p-0.5">
               <button
                 type="button"
                 onClick={() => setViewMode('grid')}
                 title="Heatmap Grid"
-                className={`px-1.5 py-0.5 text-[10px] font-semibold rounded-md flex items-center gap-1 transition-colors ${
+                className={`px-2 py-0.5 text-[10px] font-semibold rounded-full flex items-center gap-1 transition-colors ${
                   viewMode === 'grid'
-                    ? 'bg-[#22c55e]/20 text-[#4ade80]'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-[#111827] dark:bg-[#eef2f6] text-white dark:text-[#111827]'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6]'
                 }`}
               >
                 <Grid3X3 className="w-3 h-3" />
@@ -426,10 +426,10 @@ export function StudyStreakHeatmap({
                 type="button"
                 onClick={() => setViewMode('graph')}
                 title="Trend Graph"
-                className={`px-1.5 py-0.5 text-[10px] font-semibold rounded-md flex items-center gap-1 transition-colors ${
+                className={`px-2 py-0.5 text-[10px] font-semibold rounded-full flex items-center gap-1 transition-colors ${
                   viewMode === 'graph'
-                    ? 'bg-[#22c55e]/20 text-[#4ade80]'
-                    : 'text-slate-400 hover:text-slate-200'
+                    ? 'bg-[#111827] dark:bg-[#eef2f6] text-white dark:text-[#111827]'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6]'
                 }`}
               >
                 <TrendingUp className="w-3 h-3" />
@@ -439,23 +439,23 @@ export function StudyStreakHeatmap({
           </div>
         </div>
 
-        <div className="text-[10px] font-mono text-slate-500 tracking-wider text-right">
+        <div className="text-[10px] font-mono text-slate-400 dark:text-slate-500 tracking-wider text-right">
           ROLLOVER 4:00 · MIN {dailyGoal}/DAY
         </div>
 
         {/* 2. EITHER CONTRIBUTION GRID OR TREND GRAPH */}
         {viewMode === 'graph' ? (
-          <div className="p-3 rounded-xl bg-[#161a24] border border-[#242a38] space-y-2">
+          <div className="p-3 rounded-2xl bg-[#f4f5f7] dark:bg-[#202734] border border-slate-200/70 dark:border-[#2a3241] space-y-2">
             <div className="flex items-center justify-between text-[11px]">
-              <span className="font-semibold text-slate-300">
+              <span className="font-semibold text-[#111827] dark:text-[#eef2f6]">
                 Daily Trend ({metricFilter === 'new' ? 'New Cards Only' : 'All Cards'})
               </span>
               {hoveredDay ? (
-                <span className="font-mono text-sky-300 font-semibold">
+                <span className="font-mono text-emerald-700 dark:text-emerald-400 font-semibold">
                   {hoveredDay.dateDisplay}: {hoveredDay.count} cards
                 </span>
               ) : (
-                <span className="text-[10px] text-slate-500">
+                <span className="text-[10px] text-slate-500 dark:text-slate-400">
                   Hover or tap any day
                 </span>
               )}
@@ -489,7 +489,7 @@ export function StudyStreakHeatmap({
                     y1={padTop + innerH}
                     x2={w - padX}
                     y2={padTop + innerH}
-                    stroke="#2a3142"
+                    stroke="#cbd5e1"
                     strokeWidth="1"
                   />
 
@@ -507,12 +507,12 @@ export function StudyStreakHeatmap({
                         rx={2}
                         fill={
                           isToday
-                            ? '#f97316'
+                            ? '#f59e0b'
                             : p.d.count > 0
-                            ? '#22c55e'
-                            : '#232836'
+                            ? '#10b981'
+                            : '#e2e8f0'
                         }
-                        fillOpacity={p.d.count > 0 ? 0.7 : 0.6}
+                        fillOpacity={p.d.count > 0 ? 0.85 : 0.9}
                         className="cursor-pointer transition-opacity hover:opacity-100"
                         onMouseEnter={() => setHoveredDay(p.d)}
                         onClick={() => {
@@ -527,7 +527,7 @@ export function StudyStreakHeatmap({
                   {points.length > 1 && (
                     <polyline
                       fill="none"
-                      stroke="#38bdf8"
+                      stroke="#111827"
                       strokeWidth="1.8"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -545,8 +545,8 @@ export function StudyStreakHeatmap({
                         cx={p.x}
                         cy={p.y}
                         r={p.d.isToday ? 3.5 : 2.5}
-                        fill={p.d.isToday ? '#f97316' : '#38bdf8'}
-                        stroke="#0f172a"
+                        fill={p.d.isToday ? '#f59e0b' : '#111827'}
+                        stroke="#ffffff"
                         strokeWidth="1"
                         className="pointer-events-none"
                       />
@@ -556,10 +556,10 @@ export function StudyStreakHeatmap({
             })()}
           </div>
         ) : (
-        <div className="overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-700">
+        <div className="overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-300">
           <div className="inline-block min-w-full">
             {/* Month Headers */}
-            <div className="flex text-[9px] font-medium text-slate-500 pl-4 mb-1 h-3.5 relative">
+            <div className="flex text-[9px] font-medium text-slate-400 pl-4 mb-1 h-3.5 relative">
               {monthLabels.map((m, idx) => (
                 <span
                   key={idx}
@@ -574,7 +574,7 @@ export function StudyStreakHeatmap({
             {/* Grid with Day of Week labels (M, W, F) */}
             <div className="flex gap-1.5 items-start">
               {/* Day labels */}
-              <div className="flex flex-col gap-1 text-[8px] font-mono text-slate-500 pt-0.5 select-none w-3">
+              <div className="flex flex-col gap-1 text-[8px] font-mono text-slate-400 pt-0.5 select-none w-3">
                 <span className="h-[9px] leading-[9px]">M</span>
                 <span className="h-[9px] leading-[9px] opacity-0">-</span>
                 <span className="h-[9px] leading-[9px]">W</span>
@@ -591,24 +591,24 @@ export function StudyStreakHeatmap({
                     {week.map((day, dIdx) => {
                       const isSelected = day.dateDisplay === selectedDateStr;
 
-                      // Level colors
-                      let bgClass = 'bg-[#181b24]';
-                      if (day.level === 1) bgClass = 'bg-[#0f4625]';
-                      else if (day.level === 2) bgClass = 'bg-[#15803d]';
-                      else if (day.level === 3) bgClass = 'bg-[#16a34a]';
-                      else if (day.level === 4) bgClass = 'bg-[#4ade80]';
+                      // Level colors (light & dark emerald scale)
+                      let bgClass = 'bg-[#eceef2] dark:bg-[#202734]';
+                      if (day.level === 1) bgClass = 'bg-emerald-200 dark:bg-emerald-900/70';
+                      else if (day.level === 2) bgClass = 'bg-emerald-400 dark:bg-emerald-700';
+                      else if (day.level === 3) bgClass = 'bg-emerald-500 dark:bg-emerald-500';
+                      else if (day.level === 4) bgClass = 'bg-emerald-700 dark:bg-emerald-400';
 
                       return (
                         <div
                           key={dIdx}
                           onClick={() => handleCellClick(day)}
                           title={`${day.dateDisplay}: ${day.count} cards reviewed`}
-                          className={`w-[9px] h-[9px] rounded-[2px] transition-all cursor-pointer ${bgClass} ${
+                          className={`w-[9px] h-[9px] rounded-[2px] transition-colors cursor-pointer ${bgClass} ${
                             day.isToday 
-                              ? 'border-2 border-[#f97316] scale-110 shadow-[0_0_6px_rgba(249,115,22,0.8)] z-10' 
+                              ? 'border-2 border-amber-500 scale-110 z-10' 
                               : isSelected
-                              ? 'ring-2 ring-sky-400 scale-110 z-10'
-                              : 'hover:ring-1 hover:ring-white/40'
+                              ? 'ring-2 ring-[#111827] dark:ring-[#eef2f6] scale-110 z-10'
+                              : 'hover:ring-1 hover:ring-slate-400'
                           }`}
                         />
                       );
@@ -622,28 +622,28 @@ export function StudyStreakHeatmap({
         )}
 
         {/* 3. HEATMAP FOOTER LEGEND */}
-        <div className="flex items-center justify-between text-[10px] text-slate-400 pt-2 border-t border-[#232734]/80">
+        <div className="flex items-center justify-between text-[10px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200/80 dark:border-[#2a3241]">
           <div className="flex items-center gap-1.5">
-            <span className="text-[9px] text-slate-500">Less</span>
-            <span className="w-2.5 h-2.5 rounded-[2px] bg-[#181b24]" />
-            <span className="w-2.5 h-2.5 rounded-[2px] bg-[#0f4625]" />
-            <span className="w-2.5 h-2.5 rounded-[2px] bg-[#15803d]" />
-            <span className="w-2.5 h-2.5 rounded-[2px] bg-[#16a34a]" />
-            <span className="w-2.5 h-2.5 rounded-[2px] bg-[#4ade80]" />
-            <span className="text-[9px] text-slate-500">More</span>
+            <span className="text-[9px] text-slate-400 dark:text-slate-500">Less</span>
+            <span className="w-2.5 h-2.5 rounded-[2px] bg-[#eceef2] dark:bg-[#202734]" />
+            <span className="w-2.5 h-2.5 rounded-[2px] bg-emerald-200 dark:bg-emerald-900/70" />
+            <span className="w-2.5 h-2.5 rounded-[2px] bg-emerald-400 dark:bg-emerald-700" />
+            <span className="w-2.5 h-2.5 rounded-[2px] bg-emerald-500" />
+            <span className="w-2.5 h-2.5 rounded-[2px] bg-emerald-700 dark:bg-emerald-400" />
+            <span className="text-[9px] text-slate-400 dark:text-slate-500">More</span>
           </div>
 
-          <div className="flex items-center gap-3 text-[10px] text-slate-400">
+          <div className="flex items-center gap-3 text-[10px] text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-1">
-              <span className="w-2.5 h-2.5 rounded-[2px] border border-dashed border-sky-400/80" />
+              <span className="w-2.5 h-2.5 rounded-[2px] border border-dashed border-slate-400" />
               Day off
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-2.5 h-2.5 rounded-[2px] border-2 border-[#f97316]" />
+              <span className="w-2.5 h-2.5 rounded-[2px] border-2 border-amber-500" />
               Today
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-2.5 h-2.5 rounded-[2px] bg-[#141720] opacity-50" />
+              <span className="w-2.5 h-2.5 rounded-[2px] bg-[#eceef2] dark:bg-[#202734] opacity-60" />
               Future
             </span>
           </div>
@@ -652,10 +652,10 @@ export function StudyStreakHeatmap({
 
       {/* Settings Dialog to adjust Daily Goal */}
       <Dialog open={isSettingsOpen} onOpenChange={setIsSettingsOpen}>
-        <DialogContent className="max-w-xs bg-slate-900 border border-slate-800 text-slate-100 p-5 rounded-2xl">
+        <DialogContent className="max-w-xs bg-white dark:bg-[#181e28] border border-slate-200 dark:border-[#2a3241] text-[#111827] dark:text-[#eef2f6] p-5 rounded-3xl">
           <DialogHeader className="text-left pb-2">
-            <DialogTitle className="text-base font-bold text-white">Daily Review Goal</DialogTitle>
-            <DialogDescription className="text-xs text-slate-400">
+            <DialogTitle className="text-base font-bold text-[#111827] dark:text-[#eef2f6]">Daily Review Goal</DialogTitle>
+            <DialogDescription className="text-xs text-slate-500 dark:text-slate-400">
               Set target cards to review per day before 4:00 AM rollover.
             </DialogDescription>
           </DialogHeader>
@@ -665,7 +665,7 @@ export function StudyStreakHeatmap({
               type="number"
               value={tempGoalInput}
               onChange={(e) => setTempGoalInput(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-white font-mono font-bold text-center text-lg focus:outline-none focus:border-sky-500"
+              className="w-full px-3 py-2 rounded-2xl bg-[#f4f5f7] dark:bg-[#202734] border border-slate-200 dark:border-[#2a3241] text-[#111827] dark:text-[#eef2f6] font-mono font-bold text-center text-lg focus:outline-none focus:border-[#111827] dark:focus:border-[#eef2f6]"
             />
           </div>
 
@@ -673,13 +673,13 @@ export function StudyStreakHeatmap({
             <Button
               variant="outline"
               onClick={() => setIsSettingsOpen(false)}
-              className="flex-1 text-xs border-slate-800 text-slate-400"
+              className="flex-1 rounded-full text-xs border-slate-200 dark:border-[#2a3241] text-slate-600 dark:text-slate-300"
             >
               Cancel
             </Button>
             <Button
               onClick={handleSaveGoal}
-              className="flex-1 text-xs font-bold bg-sky-500 hover:bg-sky-400 text-slate-950"
+              className="flex-1 rounded-full text-xs font-bold bg-[#111827] dark:bg-[#eef2f6] hover:bg-slate-800 dark:hover:bg-white text-white dark:text-[#111827]"
             >
               Save Goal
             </Button>

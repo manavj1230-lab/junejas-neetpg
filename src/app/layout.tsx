@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#090d16',
+  themeColor: '#f4f5f7',
 };
 
 export default function RootLayout({
@@ -40,8 +40,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark h-full">
-      <body className={`${inter.className} min-h-full bg-slate-950 text-slate-100 antialiased flex flex-col`}>
+    <html lang="en" className="h-full overflow-x-clip" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('juneja_theme');if(t==='dark'){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}}catch(e){}})();`,
+          }}
+        />
+      </head>
+      <body className={`${inter.className} min-h-full overflow-x-clip bg-[#f4f5f7] text-[#111827] dark:bg-[#0f131a] dark:text-[#eef2f6] antialiased flex flex-col`}>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

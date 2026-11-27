@@ -82,6 +82,7 @@ export function AnkiDeckTable({
       'deck-biochemistry',
       'deck-orthopedics',
       'deck-dermatology',
+      'deck-forensic',
     ];
 
     return orderedDeckIds
@@ -148,10 +149,10 @@ export function AnkiDeckTable({
 
   return (
     <div className="flex-1 flex flex-col justify-start p-4 pt-5 space-y-6 animate-in fade-in duration-200">
-      {/* Exact Minimalist Dark Anki Container */}
-      <div className="w-full bg-[#262626] border border-[#383838]/70 rounded-2xl shadow-2xl overflow-hidden p-4 sm:p-6">
+      {/* Clean Neobank White / Night Anki Deck Container */}
+      <div className="w-full bg-white dark:bg-[#181e28] border border-slate-200/80 dark:border-[#2a3241] rounded-3xl shadow-[0_2px_12px_rgba(15,23,42,0.04)] dark:shadow-none overflow-hidden p-4 sm:p-6">
         {/* Table Header Row */}
-        <div className="flex items-center justify-between pb-3.5 border-b border-[#3d3d3d] text-sm font-bold text-slate-100 select-none">
+        <div className="flex items-center justify-between pb-3.5 border-b border-slate-200/80 dark:border-[#2a3241] text-sm font-bold text-[#111827] dark:text-[#eef2f6] select-none">
           <div className="flex-1 text-left tracking-wide">Deck</div>
           <div className="flex items-center gap-4 sm:gap-6 text-right font-medium">
             <span className="w-10 text-right">New</span>
@@ -163,7 +164,7 @@ export function AnkiDeckTable({
               onClick={() =>
                 setOptionsModalTarget({ id: 'all', name: 'All Active Decks' })
               }
-              className="w-6 flex items-center justify-end text-slate-400 hover:text-white transition-colors"
+              className="w-6 flex items-center justify-end text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6] transition-colors"
             >
               <Settings className="w-3.5 h-3.5" />
             </button>
@@ -173,42 +174,42 @@ export function AnkiDeckTable({
         {/* Deck Rows (Only Active / Selected Decks) */}
         {deckRows.length === 0 ? (
           <div className="py-10 px-4 text-center space-y-4">
-            <p className="text-sm text-slate-300 leading-relaxed max-w-xs mx-auto">
-              No active decks yet. Go to <span className="text-sky-400 font-semibold">Browse Decks</span> to add subjects to your daily study list
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs mx-auto">
+              No active decks yet. Go to <span className="text-[#111827] dark:text-[#eef2f6] font-semibold">Browse Decks</span> to add subjects to your daily study list
             </p>
             {onBrowseDecks && (
               <button
                 type="button"
                 onClick={onBrowseDecks}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold shadow-lg shadow-sky-500/20 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#111827] dark:bg-[#eef2f6] hover:bg-slate-800 dark:hover:bg-white text-white dark:text-[#111827] text-xs font-semibold shadow-sm dark:shadow-none transition-colors"
               >
                 Go to Browse Decks →
               </button>
             )}
           </div>
         ) : (
-          <div className="divide-y divide-[#333333]/60 pt-1">
+          <div className="divide-y divide-slate-100 dark:divide-[#2a3241] pt-1">
             {deckRows.map((deck) => {
               const isExpanded = !!expandedDeckIds[deck.id];
 
               return (
                 <div key={deck.id} className="select-none">
                   {/* Parent Subject Row */}
-                  <div className="flex items-center justify-between py-3 px-1.5 -mx-1.5 rounded-lg hover:bg-[#303030] transition-colors group">
+                  <div className="flex items-center justify-between py-3 px-1.5 -mx-1.5 rounded-xl hover:bg-[#f4f5f7] dark:hover:bg-[#202734] transition-colors group">
                     {/* Expand/Collapse + / - button + Subject Name */}
                     <div className="flex items-center flex-1 pr-2 text-left min-w-0">
                       <button
                         type="button"
                         aria-label={isExpanded ? `Collapse ${deck.name}` : `Expand ${deck.name}`}
                         onClick={(e) => toggleExpand(e, deck.id)}
-                        className="w-6 h-6 mr-1.5 flex items-center justify-center rounded text-slate-400 hover:text-white hover:bg-[#3d3d3d] font-mono text-sm font-bold shrink-0 transition-colors"
+                        className="w-6 h-6 mr-1.5 flex items-center justify-center rounded-lg text-slate-500 dark:text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6] hover:bg-slate-200/70 dark:hover:bg-[#2a3241] font-mono text-sm font-bold shrink-0 transition-colors"
                       >
                         {isExpanded ? '−' : '+'}
                       </button>
                       <button
                         type="button"
                         onClick={() => onSelectDeck(deck.id)}
-                        className="text-sm font-medium text-slate-200 group-hover:text-white transition-colors truncate text-left"
+                        className="text-sm font-semibold text-[#111827] dark:text-[#eef2f6] group-hover:text-slate-700 dark:group-hover:text-white transition-colors truncate text-left"
                       >
                         {deck.name}
                       </button>
@@ -218,8 +219,8 @@ export function AnkiDeckTable({
                     <div className="flex items-center gap-4 sm:gap-6 font-mono text-sm font-semibold text-right shrink-0">
                       <span
                         onClick={() => onSelectDeck(deck.id)}
-                        className={`w-10 text-right cursor-pointer ${
-                          deck.newCount > 0 ? 'text-[#60a5fa]' : 'text-slate-500 font-normal'
+                        className={`w-10 text-right cursor-pointer tabular-nums ${
+                          deck.newCount > 0 ? 'text-blue-600 dark:text-sky-400' : 'text-slate-400 dark:text-slate-500 font-normal'
                         }`}
                       >
                         {deck.newCount}
@@ -227,8 +228,8 @@ export function AnkiDeckTable({
 
                       <span
                         onClick={() => onSelectDeck(deck.id)}
-                        className={`w-10 text-right cursor-pointer ${
-                          deck.learnCount > 0 ? 'text-[#f87171]' : 'text-slate-500 font-normal'
+                        className={`w-10 text-right cursor-pointer tabular-nums ${
+                          deck.learnCount > 0 ? 'text-rose-600 dark:text-rose-400' : 'text-slate-400 dark:text-slate-500 font-normal'
                         }`}
                       >
                         {deck.learnCount}
@@ -236,8 +237,8 @@ export function AnkiDeckTable({
 
                       <span
                         onClick={() => onSelectDeck(deck.id)}
-                        className={`w-10 text-right cursor-pointer ${
-                          deck.dueCount > 0 ? 'text-[#4ade80]' : 'text-slate-500 font-normal'
+                        className={`w-10 text-right cursor-pointer tabular-nums ${
+                          deck.dueCount > 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400 dark:text-slate-500 font-normal'
                         }`}
                       >
                         {deck.dueCount}
@@ -250,7 +251,7 @@ export function AnkiDeckTable({
                           e.stopPropagation();
                           setOptionsModalTarget({ id: deck.id, name: deck.name });
                         }}
-                        className="w-6 flex items-center justify-end text-slate-500 hover:text-slate-200 transition-colors"
+                        className="w-6 flex items-center justify-end text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6] transition-colors"
                       >
                         <Settings className="w-3.5 h-3.5" />
                       </button>
@@ -259,37 +260,37 @@ export function AnkiDeckTable({
 
                   {/* Indented Sub-Deck Rows (When Expanded) */}
                   {isExpanded && (
-                    <div className="pl-6 pb-2 space-y-0.5 border-l border-[#3a3a3a] ml-2.5 my-1 animate-in fade-in duration-150">
+                    <div className="pl-6 pb-2 space-y-0.5 border-l border-slate-200 dark:border-[#2a3241] ml-2.5 my-1 animate-in fade-in duration-150">
                       {deck.subDecks.map((sub) => (
                         <div
                           key={sub.id}
                           onClick={() => onSelectDeck(sub.id)}
-                          className="flex items-center justify-between py-2 px-2 rounded-lg hover:bg-[#333333] cursor-pointer transition-colors group"
+                          className="flex items-center justify-between py-2 px-2 rounded-xl hover:bg-[#f4f5f7] dark:hover:bg-[#202734] cursor-pointer transition-colors group"
                         >
                           <div className="flex-1 pr-2 text-left min-w-0">
-                            <span className="text-[13px] text-slate-300 group-hover:text-white transition-colors truncate block">
+                            <span className="text-[13px] text-slate-600 dark:text-slate-300 group-hover:text-[#111827] dark:group-hover:text-white transition-colors truncate block">
                               {sub.name}
                             </span>
                           </div>
 
-                          <div className="flex items-center gap-4 sm:gap-6 font-mono text-[13px] font-semibold text-right shrink-0">
+                          <div className="flex items-center gap-4 sm:gap-6 font-mono text-[13px] font-semibold text-right shrink-0 tabular-nums">
                             <span
                               className={`w-10 text-right ${
-                                sub.newCount > 0 ? 'text-[#60a5fa]' : 'text-slate-500 font-normal'
+                                sub.newCount > 0 ? 'text-blue-600 dark:text-sky-400' : 'text-slate-400 dark:text-slate-500 font-normal'
                               }`}
                             >
                               {sub.newCount}
                             </span>
                             <span
                               className={`w-10 text-right ${
-                                sub.learnCount > 0 ? 'text-[#f87171]' : 'text-slate-500 font-normal'
+                                sub.learnCount > 0 ? 'text-rose-600 dark:text-rose-400' : 'text-slate-400 dark:text-slate-500 font-normal'
                               }`}
                             >
                               {sub.learnCount}
                             </span>
                             <span
                               className={`w-10 text-right ${
-                                sub.dueCount > 0 ? 'text-[#4ade80]' : 'text-slate-500 font-normal'
+                                sub.dueCount > 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400 dark:text-slate-500 font-normal'
                               }`}
                             >
                               {sub.dueCount}
@@ -309,19 +310,19 @@ export function AnkiDeckTable({
 
       {/* Centered Anki Study Summary Line */}
       <div className="text-center select-none pt-2">
-        <p className="text-xs text-slate-300 font-medium tracking-wide">
+        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium tracking-wide">
           {studiedTodayCount > 0 ? (
             <>
-              Studied <span className="text-white font-semibold">{studiedTodayCount}</span> cards in{' '}
-              <span className="text-white font-semibold">{minutes}</span> minutes today (
-              <span className="text-white font-semibold">{secondsPerCard}s/card</span>)
+              Studied <span className="text-[#111827] dark:text-[#eef2f6] font-semibold">{studiedTodayCount}</span> cards in{' '}
+              <span className="text-[#111827] dark:text-[#eef2f6] font-semibold">{minutes}</span> minutes today (
+              <span className="text-[#111827] dark:text-[#eef2f6] font-semibold">{secondsPerCard}s/card</span>)
             </>
           ) : (
             <>Studied 0 cards in 0.00 minutes today (0.00s/card)</>
           )}
         </p>
-        <p className="text-[11px] text-slate-500 mt-1.5">
-          Tap <span className="font-mono text-slate-400">+</span> to expand sub-topics or tap a deck to study
+        <p className="text-[11px] text-slate-400 dark:text-slate-500 mt-1.5">
+          Tap <span className="font-mono text-slate-600 dark:text-slate-300">+</span> to expand sub-topics or tap a deck to study
         </p>
       </div>
 

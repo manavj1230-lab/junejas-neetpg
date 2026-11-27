@@ -62,15 +62,15 @@ export function OnboardingCarousel({ onComplete }: OnboardingProps) {
   };
 
   return (
-    <div className="flex flex-col h-full justify-between p-6 bg-slate-950 text-white min-h-[580px]">
+    <div className="flex flex-col h-full justify-between p-6 bg-white dark:bg-[#181e28] text-[#111827] dark:text-[#eef2f6] min-h-[580px]">
       {/* Top Header / Skip */}
       <div className="flex justify-between items-center pt-2">
-        <span className="text-xs font-bold tracking-wider text-sky-400 uppercase">
-          Juneja&apos;s Pro
+        <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
+          Juneja&apos;s Anki cards
         </span>
         <button
           onClick={onComplete}
-          className="text-xs font-medium text-slate-400 hover:text-white transition-colors"
+          className="text-xs font-medium text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6] transition-colors"
         >
           Skip
         </button>
@@ -83,22 +83,20 @@ export function OnboardingCarousel({ onComplete }: OnboardingProps) {
             const Icon = slide.icon;
             return (
               <div key={idx} className="flex-[0_0_100%] min-w-0 px-2 flex flex-col items-center text-center">
-                {/* Visual Icon Badge */}
-                <div
-                  className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${slide.color} flex items-center justify-center shadow-xl shadow-black/40 mb-8 border border-white/10`}
-                >
-                  <Icon className="w-12 h-12 text-white" />
+                {/* Restraint-first Icon Surface */}
+                <div className="w-16 h-16 rounded-2xl bg-[#f4f5f7] dark:bg-[#202734] border border-slate-200/80 dark:border-[#2a3241] flex items-center justify-center mb-6 text-[#111827] dark:text-[#eef2f6]">
+                  <Icon className="w-8 h-8" />
                 </div>
 
-                <div className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold bg-white/10 text-sky-300 border border-white/10 mb-4">
+                <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[#f4f5f7] dark:bg-[#202734] text-slate-600 dark:text-slate-300 border border-slate-200/80 dark:border-[#2a3241] mb-4">
                   {slide.tag}
                 </div>
 
-                <h2 className="text-2xl font-bold tracking-tight text-slate-100 mb-3 px-2">
+                <h2 className="text-2xl font-bold tracking-tight text-[#111827] dark:text-[#eef2f6] mb-3 px-2">
                   {slide.title}
                 </h2>
 
-                <p className="text-sm leading-relaxed text-slate-400 max-w-xs mx-auto">
+                <p className="text-sm leading-relaxed text-slate-500 dark:text-slate-400 max-w-xs mx-auto">
                   {slide.subtitle}
                 </p>
               </div>
@@ -115,8 +113,8 @@ export function OnboardingCarousel({ onComplete }: OnboardingProps) {
             <button
               key={i}
               onClick={() => emblaApi && emblaApi.scrollTo(i)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                selectedIndex === i ? 'w-8 bg-sky-400' : 'w-2 bg-slate-700'
+              className={`h-2 rounded-full transition-colors duration-300 ${
+                selectedIndex === i ? 'w-8 bg-[#111827] dark:bg-[#eef2f6]' : 'w-2 bg-slate-200 dark:bg-[#2a3241]'
               }`}
             />
           ))}
@@ -126,7 +124,7 @@ export function OnboardingCarousel({ onComplete }: OnboardingProps) {
         {selectedIndex === slides.length - 1 ? (
           <Button
             onClick={onComplete}
-            className="w-full h-13 text-base font-semibold bg-sky-500 hover:bg-sky-400 text-slate-950 shadow-lg shadow-sky-500/20"
+            className="w-full h-13 rounded-full text-base font-semibold bg-[#111827] dark:bg-[#eef2f6] hover:bg-slate-800 dark:hover:bg-white text-white dark:text-[#111827] shadow-sm dark:shadow-none"
           >
             Get Started
             <CheckCircle2 className="w-5 h-5 ml-2" />
@@ -134,7 +132,7 @@ export function OnboardingCarousel({ onComplete }: OnboardingProps) {
         ) : (
           <Button
             onClick={scrollToNext}
-            className="w-full h-13 text-base font-semibold bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700"
+            className="w-full h-13 rounded-full text-base font-semibold bg-[#111827] dark:bg-[#eef2f6] hover:bg-slate-800 dark:hover:bg-white text-white dark:text-[#111827] shadow-sm dark:shadow-none"
           >
             Next
             <ArrowRight className="w-5 h-5 ml-2" />

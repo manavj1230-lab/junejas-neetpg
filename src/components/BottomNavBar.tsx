@@ -11,60 +11,36 @@ interface BottomNavBarProps {
 }
 
 export function BottomNavBar({ activeTab, onTabChange }: BottomNavBarProps) {
+  const tabs: { id: NavTab; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
+    { id: 'home', label: "Today", icon: LayoutDashboard },
+    { id: 'study', label: 'Study', icon: PlayCircle },
+    { id: 'browse', label: 'Decks', icon: FolderTree },
+    { id: 'marks', label: 'Marks', icon: Trophy },
+  ];
+
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-30 bg-slate-950/95 backdrop-blur-md border-t border-slate-800/80 pb-12">
-      <div className="max-w-md mx-auto flex items-center justify-around h-16 px-1">
-        {/* 1. Left Tab: Today's Study */}
-        <button
-          onClick={() => onTabChange('home')}
-          className={`flex flex-col items-center justify-center flex-1 h-full gap-1 transition-all ${
-            activeTab === 'home'
-              ? 'text-sky-400 font-semibold'
-              : 'text-slate-400 hover:text-slate-200'
-          }`}
-        >
-          <LayoutDashboard className={`w-5 h-5 ${activeTab === 'home' ? 'stroke-[2.5]' : 'stroke-2'}`} />
-          <span className="text-[10px] tracking-tight">Today's Study</span>
-        </button>
-
-        {/* 2. Center-Left Tab: Study (Minimalist Anki Deck List) */}
-        <button
-          onClick={() => onTabChange('study')}
-          className={`flex flex-col items-center justify-center flex-1 h-full gap-1 transition-all ${
-            activeTab === 'study'
-              ? 'text-sky-400 font-semibold'
-              : 'text-slate-400 hover:text-slate-200'
-          }`}
-        >
-          <PlayCircle className={`w-5 h-5 ${activeTab === 'study' ? 'stroke-[2.5]' : 'stroke-2'}`} />
-          <span className="text-[10px] tracking-tight">Study</span>
-        </button>
-
-        {/* 3. Center-Right Tab: Browse Decks */}
-        <button
-          onClick={() => onTabChange('browse')}
-          className={`flex flex-col items-center justify-center flex-1 h-full gap-1 transition-all ${
-            activeTab === 'browse'
-              ? 'text-sky-400 font-semibold'
-              : 'text-slate-400 hover:text-slate-200'
-          }`}
-        >
-          <FolderTree className={`w-5 h-5 ${activeTab === 'browse' ? 'stroke-[2.5]' : 'stroke-2'}`} />
-          <span className="text-[10px] tracking-tight">Browse Decks</span>
-        </button>
-
-        {/* 4. Right Tab: Marks (Dedicated 720 Scoring Dashboard) */}
-        <button
-          onClick={() => onTabChange('marks')}
-          className={`flex flex-col items-center justify-center flex-1 h-full gap-1 transition-all ${
-            activeTab === 'marks'
-              ? 'text-amber-400 font-semibold'
-              : 'text-slate-400 hover:text-slate-200'
-          }`}
-        >
-          <Trophy className={`w-5 h-5 ${activeTab === 'marks' ? 'stroke-[2.5] text-amber-400 fill-amber-400/20' : 'stroke-2'}`} />
-          <span className="text-[10px] tracking-tight">Marks</span>
-        </button>
+    <nav className="fixed bottom-0 left-0 right-0 z-30 pb-12 pointer-events-none">
+      <div className="max-w-md mx-auto px-3 pb-2 pointer-events-auto">
+        <div className="bg-[#111827] dark:bg-[#181e28] dark:border dark:border-[#2a3241] text-white rounded-[28px] p-2 shadow-xl shadow-slate-900/20 dark:shadow-none flex items-center justify-between gap-1">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => onTabChange(tab.id)}
+                className={`flex items-center justify-center gap-1.5 h-11 rounded-full transition-colors ${
+                  isActive
+                    ? 'bg-white dark:bg-[#eef2f6] text-[#111827] font-semibold px-4 flex-1 shadow-sm dark:shadow-none'
+                    : 'text-slate-400 hover:text-white px-3.5'
+                }`}
+              >
+                <Icon className="w-4 h-4 shrink-0" />
+                {isActive && <span className="text-xs tracking-tight">{tab.label}</span>}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </nav>
   );

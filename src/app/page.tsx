@@ -39,7 +39,9 @@ import {
   Flame, 
   ArrowRight,
   ShieldCheck,
-  GraduationCap
+  GraduationCap,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 // Brand-new users start with 0 active decks and choose subjects in Browse Decks
@@ -75,6 +77,26 @@ export default function Home() {
   const [studiedTodayNewCount, setStudiedTodayNewCount] = useState<number>(0);
   const [studiedTodaySeconds, setStudiedTodaySeconds] = useState<number>(0);
   const [isSimulated, setIsSimulated] = useState<boolean>(false);
+  const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light');
+
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    setThemeMode(isDark ? 'dark' : 'light');
+  }, []);
+
+  const handleThemeChange = (mode: 'light' | 'dark') => {
+    setThemeMode(mode);
+    if (mode === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    try {
+      localStorage.setItem('juneja_theme', mode);
+    } catch {
+      // ignore storage errors
+    }
+  };
 
   // Anki-Style Daily Limits & Per-Deck Activity Tracking
   const [deckLimits, setDeckLimits] = useState<Record<string, DeckDailyLimit>>({});
@@ -768,11 +790,11 @@ export default function Home() {
 
   if (isLoading || hasCompletedOnboarding === null) {
     return (
-      <div className="flex-1 flex flex-col items-center justify-center min-h-screen bg-slate-950 text-slate-100">
-        <div className="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center animate-pulse mb-3 overflow-hidden">
+      <div className="flex-1 flex flex-col items-center justify-center min-h-screen bg-[#f4f5f7] dark:bg-[#0f131a] text-[#111827] dark:text-[#eef2f6]">
+        <div className="w-12 h-12 rounded-2xl bg-white dark:bg-[#181e28] border border-slate-200/80 dark:border-[#2a3241] shadow-sm dark:shadow-none flex items-center justify-center animate-pulse mb-3 overflow-hidden">
           <img src="/icons/anki-logo.png" alt="Juneja's Anki cards" className="w-8 h-8 object-contain" />
         </div>
-        <p className="text-xs text-slate-400 font-medium">Loading NEET PG Spaced Repetition...</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Loading NEET PG Spaced Repetition...</p>
       </div>
     );
   }
@@ -780,8 +802,8 @@ export default function Home() {
   // First time visitor -> Show Onboarding Carousel
   if (!hasCompletedOnboarding) {
     return (
-      <main className="min-h-screen bg-slate-950 flex flex-col justify-center items-center p-0 sm:p-4">
-        <div className="w-full max-w-md h-screen sm:h-[680px] bg-slate-950 sm:rounded-3xl border-0 sm:border border-slate-800 shadow-2xl overflow-hidden flex flex-col">
+      <main className="min-h-screen bg-[#f4f5f7] dark:bg-[#0f131a] flex flex-col justify-center items-center p-0 sm:p-4">
+        <div className="w-full max-w-md h-screen sm:h-[680px] bg-white dark:bg-[#181e28] sm:rounded-3xl border-0 sm:border border-slate-200/80 dark:border-[#2a3241] shadow-[0_8px_30px_rgba(15,23,42,0.06)] dark:shadow-none overflow-hidden flex flex-col">
           <OnboardingCarousel onComplete={handleFinishOnboarding} />
         </div>
       </main>
@@ -791,13 +813,13 @@ export default function Home() {
   // Not logged in -> Show Login View
   if (!user) {
     return (
-      <main className="min-h-screen bg-slate-950 flex flex-col justify-center items-center p-4">
+      <main className="min-h-screen bg-[#f4f5f7] dark:bg-[#0f131a] flex flex-col justify-center items-center p-4">
         <div className="w-full max-w-md">
           <LoginModal />
           <div className="text-center mt-4">
             <button
               onClick={resetDemoUser}
-              className="text-[11px] text-slate-500 hover:text-slate-400 transition-colors"
+              className="text-[11px] text-slate-500 dark:text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6] transition-colors"
             >
               ← Replay Onboarding Carousel
             </button>
@@ -829,8 +851,8 @@ export default function Home() {
 
   // Main App Shell (Mobile-First Container)
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex justify-center">
-      <div className="w-full max-w-md bg-slate-900 border-x border-slate-800/80 min-h-screen flex flex-col relative pb-32 shadow-2xl">
+    <div className="min-h-screen bg-[#f4f5f7] dark:bg-[#0f131a] text-[#111827] dark:text-[#eef2f6] flex justify-center">
+      <div className="w-full max-w-md bg-[#f4f5f7] dark:bg-[#0f131a] border-x border-slate-200/70 dark:border-[#2a3241] min-h-screen flex flex-col relative pb-36">
         {/* Sticky App Header */}
         <AppHeader
           onOpenUpgradeModal={() => setShowUpgradeModal(true)}
@@ -840,14 +862,14 @@ export default function Home() {
 
         {/* 15-Day Free Trial Notice Banner (if active & not subscribed) */}
         {!profile?.is_subscribed && (
-          <div className={`px-4 py-2.5 flex items-center justify-between text-xs transition-colors ${
+          <div className={`mx-4 mt-3 px-3.5 py-2.5 rounded-2xl flex items-center justify-between text-xs border transition-colors ${
             isTrialActive 
-              ? 'bg-gradient-to-r from-sky-950/60 to-indigo-950/60 border-b border-sky-800/30 text-sky-200' 
-              : 'bg-gradient-to-r from-amber-950/80 to-rose-950/80 border-b border-amber-800/40 text-amber-200'
+              ? 'bg-emerald-50 dark:bg-emerald-500/15 border-emerald-200/80 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300' 
+              : 'bg-amber-50 dark:bg-amber-500/15 border-amber-200/80 dark:border-amber-500/30 text-amber-800 dark:text-amber-300'
           }`}>
             <div className="flex items-center gap-2">
-              <Sparkles className={`w-3.5 h-3.5 ${isTrialActive ? 'text-sky-400' : 'text-amber-400'}`} />
-              <span>
+              <Sparkles className={`w-3.5 h-3.5 ${isTrialActive ? 'text-emerald-600 dark:text-emerald-400' : 'text-amber-600 dark:text-amber-400'}`} />
+              <span className="font-medium">
                 {isTrialActive 
                   ? `Free Trial Active: ${daysRemaining} day${daysRemaining === 1 ? '' : 's'} left (100% Unlocked)`
                   : 'Free Trial Expired (Study queue locked)'
@@ -867,8 +889,8 @@ export default function Home() {
         {activeTab === 'home' && (
           <main className="flex-1 p-4 space-y-4 animate-in fade-in duration-200">
             {/* Prominent Dev Action Bar: Simulate Days 2-4 / Undo Simulation */}
-            <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-sky-950/40 border border-sky-500/30 text-xs">
-              <span className="text-slate-300 text-[11px]">
+            <div className="flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-2xl bg-white dark:bg-[#181e28] border border-slate-200/80 dark:border-[#2a3241] shadow-[0_2px_10px_rgba(15,23,42,0.03)] dark:shadow-none text-xs">
+              <span className="text-slate-600 dark:text-slate-300 text-[11px] font-medium">
                 {isSimulated
                   ? 'Simulation active (auto-reverts on next visit):'
                   : 'Test multi-day streak, Due queue & Trend Graph:'}
@@ -877,7 +899,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={revertSimulation}
-                  className="px-2.5 py-1 rounded-lg bg-rose-500 hover:bg-rose-400 text-slate-950 font-bold text-[11px] shrink-0 shadow transition-colors"
+                  className="px-3 py-1 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-semibold text-[11px] shrink-0 transition-colors"
                 >
                   Undo Simulation
                 </button>
@@ -885,11 +907,45 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={simulateDays2To4}
-                  className="px-2.5 py-1 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-[11px] shrink-0 shadow transition-colors"
+                  className="px-3 py-1 rounded-full bg-[#111827] dark:bg-[#eef2f6] hover:bg-slate-800 dark:hover:bg-white text-white dark:text-[#111827] font-semibold text-[11px] shrink-0 transition-colors"
                 >
                   Simulate Days 2–4
                 </button>
               )}
+            </div>
+
+            {/* Full-Breadth Appearance Switcher (Today Tab Only) */}
+            <div
+              role="group"
+              aria-label="Appearance mode"
+              className="w-full p-1.5 rounded-2xl bg-white dark:bg-[#181e28] border border-slate-200/80 dark:border-[#2a3241] shadow-[0_2px_10px_rgba(15,23,42,0.03)] dark:shadow-none flex items-center gap-1.5"
+            >
+              <button
+                type="button"
+                aria-pressed={themeMode === 'light'}
+                onClick={() => handleThemeChange('light')}
+                className={`flex-1 h-9 rounded-xl flex items-center justify-center gap-2 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111827] dark:focus-visible:outline-[#eef2f6] ${
+                  themeMode === 'light'
+                    ? 'bg-[#111827] text-white'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6]'
+                }`}
+              >
+                <Sun className="w-3.5 h-3.5" />
+                <span>Light</span>
+              </button>
+              <button
+                type="button"
+                aria-pressed={themeMode === 'dark'}
+                onClick={() => handleThemeChange('dark')}
+                className={`flex-1 h-9 rounded-xl flex items-center justify-center gap-2 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111827] dark:focus-visible:outline-[#eef2f6] ${
+                  themeMode === 'dark'
+                    ? 'bg-[#eef2f6] text-[#111827]'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-[#111827] dark:hover:text-[#eef2f6]'
+                }`}
+              >
+                <Moon className="w-3.5 h-3.5" />
+                <span>Night</span>
+              </button>
             </div>
 
             {/* 1. Study Streak & Activity Heatmap Card (300 Goal, New Cards Toggle & Trend Graph) */}
@@ -900,37 +956,37 @@ export default function Home() {
               selectedDateStr={selectedDaySummary.dateStr}
             />
 
-            {/* 2. Daily "Cards Reviewed" Summary Card (Match Reference Image 2) */}
+            {/* 2. Daily "Cards Reviewed" Summary Card */}
             <DailyCardsSummaryCard data={selectedDaySummary} />
 
             {/* 3. Active Decks in Queue */}
-            <Card className="border-slate-800 bg-slate-900/70 text-slate-100">
+            <Card className="rounded-3xl border-slate-200/80 dark:border-[#2a3241] bg-white dark:bg-[#181e28] text-[#111827] dark:text-[#eef2f6] shadow-[0_2px_12px_rgba(15,23,42,0.04)] dark:shadow-none">
               <CardHeader className="pb-3">
                 <div className="flex justify-between items-center">
-                  <CardTitle className="text-sm font-bold text-slate-200">
+                  <CardTitle className="text-sm font-bold text-[#111827] dark:text-[#eef2f6]">
                     Active Decks in Queue ({selectedDeckIds.length})
                   </CardTitle>
                   <Button
                     variant="ghost"
                     size="sm"
                     onClick={() => setActiveTab('browse')}
-                    className="text-xs text-sky-400 hover:text-sky-300 p-0 h-auto"
+                    className="text-xs text-[#111827] dark:text-[#eef2f6] hover:bg-[#f4f5f7] dark:hover:bg-[#202734] px-2.5 h-7 rounded-full font-semibold"
                   >
                     Manage Decks →
                   </Button>
                 </div>
-                <CardDescription className="text-xs text-slate-400">
+                <CardDescription className="text-xs text-slate-500 dark:text-slate-400">
                   Real imported MBBS subjects included in daily FSRS review ({TOTAL_REAL_CARDS.toLocaleString()} total cards).
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-2.5 pt-0">
                 {selectedDeckIds.length === 0 ? (
-                  <div className="p-4 rounded-xl bg-slate-950/40 border border-dashed border-slate-800 text-center">
-                    <p className="text-xs text-slate-400">No topic decks active in your queue.</p>
+                  <div className="p-4 rounded-2xl bg-[#f4f5f7] dark:bg-[#202734] border border-dashed border-slate-300 dark:border-[#2a3241] text-center">
+                    <p className="text-xs text-slate-500 dark:text-slate-400">No topic decks active in your queue.</p>
                     <Button
                       variant="link"
                       onClick={() => setActiveTab('browse')}
-                      className="text-xs text-sky-400 p-0 mt-1 h-auto"
+                      className="text-xs text-[#111827] dark:text-[#eef2f6] font-semibold p-0 mt-1 h-auto"
                     >
                       Browse MBBS Decks to add topics
                     </Button>
@@ -942,22 +998,22 @@ export default function Home() {
                     return (
                       <div
                         key={deck.id}
-                        className="flex items-center justify-between p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 transition-colors"
+                        className="flex items-center justify-between p-3 rounded-2xl bg-[#f4f5f7] dark:bg-[#202734] border border-slate-200/60 dark:border-[#2a3241] hover:border-slate-300 dark:hover:border-slate-600 transition-colors"
                       >
                         <div className="flex items-center gap-2.5">
-                          <div className="w-7 h-7 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold text-[11px]">
+                          <div className="w-8 h-8 rounded-xl bg-white dark:bg-[#181e28] border border-slate-200/80 dark:border-[#2a3241] text-[#111827] dark:text-[#eef2f6] flex items-center justify-center font-bold text-[11px] shadow-2xs dark:shadow-none">
                             {deck.year.replace(' Prof', 'P')}
                           </div>
                           <div>
-                            <div className="text-xs font-semibold text-slate-200">{deck.name}</div>
-                            <div className="text-[10px] text-slate-500">{deck.cardCount.toLocaleString()} Real Cards • {deck.year}</div>
+                            <div className="text-xs font-semibold text-[#111827] dark:text-[#eef2f6]">{deck.name}</div>
+                            <div className="text-[10px] text-slate-500 dark:text-slate-400">{deck.cardCount.toLocaleString()} Real Cards • {deck.year}</div>
                           </div>
                         </div>
                         <Button
                           variant="ghost"
                           size="sm"
                           onClick={() => handleLaunchDeckStudy(deck.id)}
-                          className="text-xs text-sky-400 hover:text-sky-300 hover:bg-sky-500/10 h-7 px-2 font-medium"
+                          className="text-xs bg-[#111827] dark:bg-[#eef2f6] text-white dark:text-[#111827] hover:bg-slate-800 dark:hover:bg-white hover:text-white dark:hover:text-[#111827] rounded-full h-7 px-3 font-semibold"
                         >
                           Study →
                         </Button>
@@ -973,22 +1029,22 @@ export default function Home() {
               {isSimulated ? (
                 <button
                   onClick={revertSimulation}
-                  className="text-[11px] text-rose-400 hover:text-rose-300 font-medium transition-colors"
+                  className="text-[11px] text-rose-600 dark:text-rose-400 hover:text-rose-700 font-semibold transition-colors"
                 >
                   Undo Simulation
                 </button>
               ) : (
                 <button
                   onClick={simulateDays2To4}
-                  className="text-[11px] text-sky-400 hover:text-sky-300 font-medium transition-colors"
+                  className="text-[11px] text-[#111827] dark:text-[#eef2f6] hover:text-slate-600 dark:hover:text-slate-300 font-semibold transition-colors"
                 >
                   Simulate Days 2–4 (+30 cards/subject/day)
                 </button>
               )}
-              <span className="text-slate-700">•</span>
+              <span className="text-slate-300 dark:text-slate-700">•</span>
               <button
                 onClick={resetDemoUser}
-                className="text-[11px] text-slate-500 hover:text-rose-400 transition-colors"
+                className="text-[11px] text-slate-500 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 transition-colors"
               >
                 Reset Demo User
               </button>

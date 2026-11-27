@@ -61,6 +61,10 @@ export function formatCardHtml(raw: string, isQuestion: boolean): string {
   if (!raw) return '';
 
   let formatted = raw
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<(?:iframe|object|embed)\b[^>]*>[\s\S]*?<\/(?:iframe|object|embed)>/gi, '')
+    .replace(/\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/javascript:/gi, '')
     .replace(/<div[^>]*class=["']?[^"']*ome-widget[^"']*["']?[^>]*>[\s\S]*?<\/div>/gi, '')
     .replace(/<a\b[^>]*>[\s\S]*?<\/a>/gi, '');
 
@@ -83,7 +87,7 @@ export function formatCardHtml(raw: string, isQuestion: boolean): string {
         return `<img src="${finalSrc}" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;" alt="" loading="lazy" onerror="this.remove()" />`;
       }
 
-      return `<span class="relative block group/img my-3 text-center"><img src="${finalSrc}" class="max-h-80 w-auto max-w-full rounded-xl mx-auto border border-slate-700/60 object-contain shadow-lg bg-black/40 block cursor-zoom-in transition-transform hover:scale-[1.01]" alt="" loading="lazy" onerror="this.parentElement?.remove()" /><span class="pointer-events-none inline-flex items-center gap-1 mt-1.5 px-2.5 py-0.5 rounded-full bg-slate-950/85 border border-slate-700/80 text-[10px] font-medium text-slate-300 opacity-80 group-hover/img:opacity-100">🔍 Tap to zoom</span></span>`;
+      return `<span class="relative block group/img my-3 text-center"><img src="${finalSrc}" class="max-h-80 w-auto max-w-full rounded-xl mx-auto border border-slate-700/60 object-contain shadow-lg bg-black/40 block cursor-zoom-in transition-transform hover:scale-[1.01]" alt="" loading="lazy" onerror="this.parentElement?.remove()" /><span class="pointer-events-none inline-flex items-center gap-1 mt-1.5 px-2.5 py-0.5 rounded-full bg-slate-950/85 border border-slate-700/80 text-[10px] font-medium text-slate-300 opacity-80 group-hover/img:opacity-100">Tap to zoom</span></span>`;
     }
   );
 
