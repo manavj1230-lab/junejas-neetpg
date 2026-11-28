@@ -15,9 +15,15 @@ export function LoginModal({ onSuccess }: LoginModalProps) {
   const [email, setEmail] = useState('');
   const [showEmailInput, setShowEmailInput] = useState(false);
   const [emailMessage, setEmailMessage] = useState<string | null>(null);
+  const [authError, setAuthError] = useState<string | null>(null);
 
   const handleGoogleLogin = async () => {
-    await signInWithGoogle();
+    setAuthError(null);
+    const res = await signInWithGoogle();
+    if (res?.error) {
+      setAuthError(res.error);
+      return;
+    }
     if (onSuccess) onSuccess();
   };
 
@@ -90,6 +96,12 @@ export function LoginModal({ onSuccess }: LoginModalProps) {
             </svg>
             Continue with Google
           </Button>
+
+          {authError && (
+            <p className="text-xs text-rose-600 dark:text-rose-400 text-center font-medium">
+              {authError}
+            </p>
+          )}
 
           {/* Divider */}
           <div className="relative my-3">

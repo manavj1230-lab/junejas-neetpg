@@ -156,8 +156,8 @@ export default function Home() {
       localStorage.removeItem('junejas_sim_snapshot');
     }
 
-    const onboardingDone = localStorage.getItem('neetpg_onboarding_completed') === 'true';
-    setHasCompletedOnboarding(onboardingDone);
+    // Always start signed-out visitors on the Onboarding Carousel before Login
+    setHasCompletedOnboarding(false);
 
     const savedDecks = localStorage.getItem('neetpg_selected_decks');
     if (savedDecks) {
@@ -265,7 +265,6 @@ export default function Home() {
   };
 
   const handleFinishOnboarding = () => {
-    localStorage.setItem('neetpg_onboarding_completed', 'true');
     setHasCompletedOnboarding(true);
   };
 
@@ -799,8 +798,8 @@ export default function Home() {
     );
   }
 
-  // First time visitor -> Show Onboarding Carousel
-  if (!hasCompletedOnboarding) {
+  // Not logged in -> Show Onboarding Carousel first, then Login View
+  if (!user && !hasCompletedOnboarding) {
     return (
       <main className="min-h-screen bg-[#f4f5f7] dark:bg-[#0f131a] flex flex-col justify-center items-center p-0 sm:p-4">
         <div className="w-full max-w-md h-screen sm:h-[680px] bg-white dark:bg-[#181e28] sm:rounded-3xl border-0 sm:border border-slate-200/80 dark:border-[#2a3241] shadow-[0_8px_30px_rgba(15,23,42,0.06)] dark:shadow-none overflow-hidden flex flex-col">
@@ -810,7 +809,7 @@ export default function Home() {
     );
   }
 
-  // Not logged in -> Show Login View
+  // After Onboarding (or Skip) -> Show Login View
   if (!user) {
     return (
       <main className="min-h-screen bg-[#f4f5f7] dark:bg-[#0f131a] flex flex-col justify-center items-center p-4">

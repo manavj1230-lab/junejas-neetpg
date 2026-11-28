@@ -12,7 +12,7 @@ interface AuthContextType {
   isTrialActive: boolean;
   isLocked: boolean;
   isOrthopedicsUnlocked: boolean;
-  signInWithGoogle: () => Promise<void>;
+  signInWithGoogle: () => Promise<{ error?: string }>;
   signInWithEmail: (email: string) => Promise<{ otpSent?: boolean; error?: string }>;
   signOut: () => Promise<void>;
   upgradeSubscription: () => void;
@@ -100,34 +100,51 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     isOrthopedicsUnlocked = profile.is_subscribed || now < orthoEnd;
   }
 
-  const signInWithGoogle = async () => {
+  const signInWithGoogle = async (): Promise<{ error?: string }> => {
     setIsLoading(true);
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const isLiveSupabase = supabaseUrl && !supabaseUrl.includes('placeholder');
+    try {
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const isLiveSupabase = supabaseUrl && !supabaseUrl.includes('placeholder');
 
-    if (isLiveSupabase) {
-      const supabase = createClient();
-      await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: `${window.location.origin}/auth/callback`,
-        },
-      });
-    } else {
-      // Instant seamless demo login
-      const mockUser = { id: 'mock-med-user-uuid', email: 'dr.sharma@neetpg.in' };
-      const mockProfile: Profile = {
-        id: 'mock-med-user-uuid',
-        email: 'dr.sharma@neetpg.in',
-        trial_start_date: new Date().toISOString(),
-        is_subscribed: false,
-        daily_new_limit: 20
-      };
-      localStorage.setItem('neetpg_mock_user', JSON.stringify(mockUser));
-      localStorage.setItem('neetpg_mock_profile', JSON.stringify(mockProfile));
-      setUser(mockUser);
-      setProfile(mockProfile);
+      if (isLiveSupabase) {
+        const supabase = createClient();
+        const { data, error } = await supabase.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: `${window.location.origin}/auth/callback`,
+          },
+        });
+        if (error) {
+          setIsLoading(false);
+          return { error: error.message };
+        }
+        if (!data?.url) {
+          setIsLoading(false);
+          return { error: 'Could not start Google sign-in. Check Supabase Google OAuth settings.' };
+        }
+        // Browser will redirect to data.url; fallback reset in case popup/redirect is blocked
+        setTimeout(() => setIsLoading(false), 4000);
+        return {};
+      } else {
+        // Instant seamless demo login
+        const mockUser = { id: 'mock-med-user-uuid', email: 'dr.sharma@neetpg.in' };
+        const mockProfile: Profile = {
+          id: 'mock-med-user-uuid',
+          email: 'dr.sharma@neetpg.in',
+          trial_start_date: new Date().toISOString(),
+          is_subscribed: false,
+          daily_new_limit: 20
+        };
+        localStorage.setItem('neetpg_mock_user', JSON.stringify(mockUser));
+        localStorage.setItem('neetpg_mock_profile', JSON.stringify(mockProfile));
+        setUser(mockUser);
+        setProfile(mockProfile);
+        setIsLoading(false);
+        return {};
+      }
+    } catch (err) {
       setIsLoading(false);
+      return { error: err instanceof Error ? err.message : 'Google sign-in failed.' };
     }
   };
 
