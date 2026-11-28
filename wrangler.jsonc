@@ -16,5 +16,9 @@
       "binding": "WORKER_SELF_REFERENCE",
       "service": "junejas-neetpg"
     }
-  ]
+  ],
+  "vars": {
+    "NEXT_PUBLIC_SUPABASE_URL": "https://zodwllmkjvddkuvxtasu.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_Tz2RSrLt9lj0bfImHp23KA_ABJZD2Dh"
+  }
 }
