@@ -278,7 +278,7 @@ export function SubscriptionUpgradeModal({
                 variant="outline"
                 className="text-[11px] border-amber-500/30 text-amber-300 bg-amber-500/10 px-3 py-0.5 mb-2"
               >
-                15-Day Free Trial Ended
+                7-Day Free Trial Ended
               </Badge>
               <DialogTitle className="text-2xl font-bold tracking-tight text-white">
                 Upgrade to Juneja&apos;s Pro

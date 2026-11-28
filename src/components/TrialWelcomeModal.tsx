@@ -19,10 +19,10 @@ export function TrialWelcomeModal({ isOpen, onClose }: TrialWelcomeModalProps) {
             <Sparkles className="w-8 h-8" />
           </div>
           <DialogTitle className="text-xl font-bold tracking-tight text-white">
-            15 Days Free Access Unlocked!
+            7 Days Free Access Unlocked!
           </DialogTitle>
           <DialogDescription className="text-xs text-slate-300 mt-2 text-center leading-relaxed">
-            Welcome, Doctor! You now have full, unrestricted access to all curated NEET PG subject decks and the FSRS spaced repetition engine for the next 15 days.
+            Welcome, Doctor! You now have full, unrestricted access to all curated NEET PG subject decks and the FSRS spaced repetition engine for the next 7 days.
           </DialogDescription>
         </DialogHeader>
 
@@ -42,7 +42,7 @@ export function TrialWelcomeModal({ isOpen, onClose }: TrialWelcomeModalProps) {
         </div>
 
         <div className="text-[11px] text-center text-slate-400 bg-sky-950/30 border border-sky-800/30 p-2.5 rounded-lg mb-2">
-          After 15 days, continue for <span className="text-sky-300 font-semibold">₹50/mo</span>, <span className="text-sky-300 font-semibold">₹500/yr</span>, or <span className="text-emerald-300 font-semibold">₹1,500 lifetime</span>. No automatic charges.
+          After 7 days, continue for <span className="text-sky-300 font-semibold">₹50/mo</span>, <span className="text-sky-300 font-semibold">₹500/yr</span>, or <span className="text-emerald-300 font-semibold">₹1,500 lifetime</span>. No automatic charges.
         </div>
 
         <DialogFooter className="mt-2">

@@ -59,13 +59,13 @@ export function LoginModal({ onSuccess }: LoginModalProps) {
         </CardHeader>
 
         <CardContent className="space-y-4">
-          {/* 15-Day Free Trial Callout */}
+          {/* 7-Day Free Trial Callout */}
           <div className="rounded-2xl bg-[#f4f5f7] dark:bg-[#202734] border border-slate-200/80 dark:border-[#2a3241] p-3.5 flex items-start gap-3">
             <Sparkles className="w-4 h-4 text-[#111827] dark:text-[#eef2f6] shrink-0 mt-0.5" />
             <div className="text-xs">
-              <span className="font-semibold text-[#111827] dark:text-[#eef2f6]">15-day full free trial</span>
+              <span className="font-semibold text-[#111827] dark:text-[#eef2f6]">7-day full free trial</span>
               <p className="text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">
-                Full access to all curated clinical cards for 15 days (then ₹50/mo, ₹500/yr, or ₹1,500 lifetime).
+                Full access to all curated clinical cards for 7 days (then ₹50/mo, ₹500/yr, or ₹1,500 lifetime).
               </p>
             </div>
           </div>

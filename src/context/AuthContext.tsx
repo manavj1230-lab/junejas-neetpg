@@ -20,7 +20,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const TRIAL_DAYS = 15;
+const TRIAL_DAYS = 7;
 const ORTHO_FREE_DAYS = 180; // Silent 6-month free access for Orthopedics
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -82,8 +82,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     initAuth();
   }, []);
 
-  // Calculate 15-Day trial status (+ silent 180-day Orthopedics access)
-  let daysRemaining = 15;
+  // Calculate 7-Day trial status (+ silent 180-day Orthopedics access)
+  let daysRemaining = 7;
   let isTrialActive = true;
   let isLocked = false;
   let isOrthopedicsUnlocked = true;

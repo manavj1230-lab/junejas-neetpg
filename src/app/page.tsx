@@ -859,7 +859,7 @@ export default function Home() {
           showInstallButton={!isStandaloneMode}
         />
 
-        {/* 15-Day Free Trial Notice Banner (if active & not subscribed) */}
+        {/* 7-Day Free Trial Notice Banner (if active & not subscribed) */}
         {!profile?.is_subscribed && (
           <div className={`mx-4 mt-3 px-3.5 py-2.5 rounded-2xl flex items-center justify-between text-xs border transition-colors ${
             isTrialActive 
